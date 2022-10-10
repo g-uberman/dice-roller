@@ -4,16 +4,21 @@
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 /* FONTS */
 h2 {
     text-align: center;
     margin: 10px 0;
 }
 
-.container {
-    display: flex;
-    padding: 20px;
-}
+/* DICE WRAPPERS */
 
 .dieWrapper {
     border: 1px dotted #000;
@@ -36,4 +41,30 @@ h2 {
     background: #000;
     color: #fff;
     border-radius: 3px;
+}
+
+/* RESULT WRAPPER */
+
+.resultWrapper {
+    border: 1px dotted #000;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.roll {
+    width: 80px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.rollResult {
+    font-size: 2em;
+    font-weight: bold;
 }

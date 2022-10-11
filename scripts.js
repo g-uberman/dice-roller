@@ -57,6 +57,8 @@ const rollExploding = function (sides) {
   return dieTotal;
 };
 
+// ROLL BUTTON EFFECT
+
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;

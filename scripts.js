@@ -41,8 +41,19 @@ minusDice = function (dice) {
 // ROLL MECHANIC
 
 const rollDie = function (sides) {
-  let dieResult = Math.ceil(Math.random() * Number(sides));
-  return dieResult;
+  let dieCurrent = Math.ceil(Math.random() * Number(sides));
+  return dieCurrent;
+};
+
+const rollExploding = function (sides) {
+  let dieTotal = 0;
+  let dieCurrent = rollDie(sides);
+  dieTotal = dieTotal + dieCurrent;
+  for ( dieCurrent; dieCurrent == sides; ) {
+      dieCurrent = rollDie(sides);
+      dieTotal = dieTotal + dieCurrent;
+    }
+  return dieTotal;
 };
 
 const rollAll = function () {

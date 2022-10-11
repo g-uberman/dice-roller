@@ -9,8 +9,6 @@ const rollResult = document.getElementById("rollResult");
 
 let numOfD6 = 0;
 
-let dieResult = 1;
-
 // FUNCTIONS
 
 plusDice = function (dice) {
@@ -42,9 +40,17 @@ minusDice = function (dice) {
 // ROLL MECHANIC
 
 const rollDie = function (sides) {
-  dieResult = Math.ceil((Math.random()) * Number(sides))
-  rollResult.innerText = dieResult;
+  let dieResult = Math.ceil((Math.random()) * Number(sides))
+  return dieResult;
 };
+
+const collectDice = function () {
+  let rollsTotal = 0;
+  for ( let i = 0; i < numOfD6; i++ ) {
+    rollsTotal = rollsTotal + rollDie(6);
+  }
+  rollResult.innerText = rollsTotal;
+}
 
 // BUTTONS
 
@@ -57,5 +63,5 @@ D6minus.addEventListener("click", (e) => {
   e.preventDefault();
 });
 roll.addEventListener("click", () => {
-  rollDie(100);
+  collectDice();
 });

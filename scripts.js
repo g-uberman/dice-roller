@@ -41,40 +41,15 @@ minusDice = function (dice) {
 
 let dieResult = 1;
 
-const rollanddisplay = function (sides) {
-    rollDie(sides);
-    displayResult();
-}
-
 const rollDie = function (sides) {
   dieResult = 1;
-
-  function singleTest() {
-    return new Promise((resolve, reject) => {
-      if (Math.random() < 0.5) {
-        resolve();
-        dieResult++;
-      } else {
-        reject();
-      }
-    });
-  }
-
   for (let i = 0; i < sides - 1; i++) {
-    singleTest()
-      .then(() => {
-        console.log("rolled");
-      })
-      .catch(() => {
-        return null;
-      });
+    if (Math.random() < 0.5) {
+      dieResult++;
+    }
   }
-
+  rollResult.innerText = dieResult;
 };
-
-const displayResult = function () {
-    rollResult.innerText = dieResult;
-}
 
 // BUTTONS
 
@@ -87,5 +62,5 @@ D6minus.addEventListener("click", (e) => {
   e.preventDefault();
 });
 roll.addEventListener("click", () => {
-    rollanddisplay(4);
+  rollDie(100);
 });

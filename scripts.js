@@ -46,9 +46,33 @@ let numOfD20 = 0;
 
 plusDice = function (dice) {
   switch (dice) {
+    case "D4":
+      numOfD4++;
+      D4input.value = numOfD4;
+      break;
     case "D6":
       numOfD6++;
       D6input.value = numOfD6;
+      break;
+    case "D8":
+      numOfD8++;
+      D8input.value = numOfD8;
+      break;
+    case "D10":
+      numOfD10++;
+      D10input.value = numOfD10;
+      break;
+    case "D100":
+      numOfD100++;
+      D100input.value = numOfD100;
+      break;
+    case "D12":
+      numOfD12++;
+      D12input.value = numOfD12;
+      break;
+    case "D20":
+      numOfD620++;
+      D20input.value = numOfD20;
       break;
     default:
       console.log("Dice not added yet.");

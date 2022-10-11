@@ -45,13 +45,14 @@ const rollDie = function (sides) {
   return dieResult;
 };
 
-const collectDice = function () {
+const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
+  // ROLL ALL D6s:
   for (let i = 0; i < numOfD6; i++) {
     let currentRoll = rollDie(6);
     rollsTotal = rollsTotal + currentRoll;
-
+    // display:
     if (individualResults.innerText == "") {
       individualResults.innerText = `D6: ${currentRoll}`;
     } else {
@@ -73,5 +74,5 @@ D6minus.addEventListener("click", (e) => {
   e.preventDefault();
 });
 roll.addEventListener("click", () => {
-  collectDice();
+  rollAll();
 });

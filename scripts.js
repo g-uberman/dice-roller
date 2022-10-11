@@ -9,6 +9,8 @@ const rollResult = document.getElementById("rollResult");
 
 let numOfD6 = 0;
 
+let dieResult = 1;
+
 // FUNCTIONS
 
 plusDice = function (dice) {
@@ -39,10 +41,7 @@ minusDice = function (dice) {
 
 // ROLL MECHANIC
 
-let dieResult = 1;
-
 const rollDie = function (sides) {
-  dieResult = 1;
   dieResult = Math.ceil((Math.random()) * Number(sides))
   rollResult.innerText = dieResult;
 };

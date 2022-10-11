@@ -166,6 +166,23 @@ const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
   let currentRoll = 0;
+  // ROLL ALL D4s:
+  for (let i = 0; i < numOfD4; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(4);
+    } else {
+      currentRoll = rollDie(4);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D4: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D4: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
   // ROLL ALL D6s:
   for (let i = 0; i < numOfD6; i++) {
     if (explodingCheckbox.checked == true) {
@@ -180,6 +197,91 @@ const rollAll = function () {
     } else {
       individualResults.innerText =
         individualResults.innerText + `, D6: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
+  // ROLL ALL D8s:
+  for (let i = 0; i < numOfD8; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(8);
+    } else {
+      currentRoll = rollDie(8);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D8: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D8: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
+  // ROLL ALL D10s:
+  for (let i = 0; i < numOfD10; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(10);
+    } else {
+      currentRoll = rollDie(10);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D10: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D10: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
+  // ROLL ALL D100s:
+  for (let i = 0; i < numOfD100; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(100);
+    } else {
+      currentRoll = rollDie(100);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D100: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D100: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
+  // ROLL ALL D12s:
+  for (let i = 0; i < numOfD12; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(12);
+    } else {
+      currentRoll = rollDie(12);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D12: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D12: ${currentRoll}`;
+    }
+    rollResult.innerText = rollsTotal;
+  }
+  // ROLL ALL D20s:
+  for (let i = 0; i < numOfD20; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(20);
+    } else {
+      currentRoll = rollDie(20);
+    }
+    rollsTotal = rollsTotal + currentRoll;
+    // display:
+    if (individualResults.innerText == "") {
+      individualResults.innerText = `D20: ${currentRoll}`;
+    } else {
+      individualResults.innerText =
+        individualResults.innerText + `, D20: ${currentRoll}`;
     }
     rollResult.innerText = rollsTotal;
   }

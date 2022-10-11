@@ -5,6 +5,7 @@ const D6plus = document.getElementById("D6plus");
 const D6minus = document.getElementById("D6minus");
 const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
+const explodingCheckbox = document.getElementById("exploding");
 
 // VARIABLES
 

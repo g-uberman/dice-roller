@@ -43,11 +43,7 @@ let dieResult = 1;
 
 const rollDie = function (sides) {
   dieResult = 1;
-  for (let i = 0; i < sides - 1; i++) {
-    if (Math.random() < 0.5) {
-      dieResult++;
-    }
-  }
+  dieResult = Math.ceil((Math.random()) * Number(sides))
   rollResult.innerText = dieResult;
 };
 

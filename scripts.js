@@ -60,9 +60,14 @@ const rollExploding = function (sides) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
+  let currentRoll = 0;
   // ROLL ALL D6s:
   for (let i = 0; i < numOfD6; i++) {
-    let currentRoll = rollDie(6);
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(6);
+    } else {
+      currentRoll = rollDie(6);
+    }
     rollsTotal = rollsTotal + currentRoll;
     // display:
     if (individualResults.innerText == "") {

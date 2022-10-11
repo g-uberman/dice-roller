@@ -71,7 +71,7 @@ plusDice = function (dice) {
       D12input.value = numOfD12;
       break;
     case "D20":
-      numOfD620++;
+      numOfD20++;
       D20input.value = numOfD20;
       break;
     default:

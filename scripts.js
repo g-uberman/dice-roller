@@ -34,7 +34,13 @@ const explodingCheckbox = document.getElementById("exploding");
 
 // VARIABLES
 
+let numOfD4 = 0;
 let numOfD6 = 0;
+let numOfD8 = 0;
+let numOfD10 = 0;
+let numOfD100 = 0;
+let numOfD12 = 0;
+let numOfD20 = 0;
 
 // FUNCTIONS
 

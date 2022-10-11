@@ -75,10 +75,10 @@ const rollExploding = function (sides) {
   let dieTotal = 0;
   let dieCurrent = rollDie(sides);
   dieTotal = dieTotal + dieCurrent;
-  for ( dieCurrent; dieCurrent == sides; ) {
-      dieCurrent = rollDie(sides);
-      dieTotal = dieTotal + dieCurrent;
-    }
+  for (dieCurrent; dieCurrent == sides; ) {
+    dieCurrent = rollDie(sides);
+    dieTotal = dieTotal + dieCurrent;
+  }
   return dieTotal;
 };
 
@@ -109,6 +109,15 @@ const rollAll = function () {
 
 // BUTTONS
 
+D4plus.addEventListener("click", (e) => {
+  plusDice("D4");
+  e.preventDefault();
+});
+D4minus.addEventListener("click", (e) => {
+  minusDice("D4");
+  e.preventDefault();
+});
+
 D6plus.addEventListener("click", (e) => {
   plusDice("D6");
   e.preventDefault();
@@ -117,6 +126,52 @@ D6minus.addEventListener("click", (e) => {
   minusDice("D6");
   e.preventDefault();
 });
+
+D8plus.addEventListener("click", (e) => {
+  plusDice("D8");
+  e.preventDefault();
+});
+D8minus.addEventListener("click", (e) => {
+  minusDice("D8");
+  e.preventDefault();
+});
+
+D10plus.addEventListener("click", (e) => {
+  plusDice("D10");
+  e.preventDefault();
+});
+D10minus.addEventListener("click", (e) => {
+  minusDice("D10");
+  e.preventDefault();
+});
+
+D100plus.addEventListener("click", (e) => {
+  plusDice("D100");
+  e.preventDefault();
+});
+D100minus.addEventListener("click", (e) => {
+  minusDice("D100");
+  e.preventDefault();
+});
+
+D12plus.addEventListener("click", (e) => {
+  plusDice("D12");
+  e.preventDefault();
+});
+D12minus.addEventListener("click", (e) => {
+  minusDice("D12");
+  e.preventDefault();
+});
+
+D20plus.addEventListener("click", (e) => {
+  plusDice("D20");
+  e.preventDefault();
+});
+D20minus.addEventListener("click", (e) => {
+  minusDice("D20");
+  e.preventDefault();
+});
+
 roll.addEventListener("click", () => {
   rollAll();
 });

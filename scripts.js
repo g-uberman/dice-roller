@@ -81,10 +81,58 @@ plusDice = function (dice) {
 
 minusDice = function (dice) {
   switch (dice) {
-    case "D6":
+    case "D4":
+      if (numOfD4 > 0) {
+        numOfD4--;
+        D4input.value = numOfD6;
+        break;
+      } else {
+        return null;
+      }
+    case "D4":
       if (numOfD6 > 0) {
         numOfD6--;
         D6input.value = numOfD6;
+        break;
+      } else {
+        return null;
+      }
+    case "D8":
+      if (numOfD8 > 0) {
+        numOfD8--;
+        D8input.value = numOfD8;
+        break;
+      } else {
+        return null;
+      }
+    case "D10":
+      if (numOfD10 > 0) {
+        numOfD10--;
+        D10input.value = numOfD10;
+        break;
+      } else {
+        return null;
+      }
+    case "D100":
+      if (numOfD100 > 0) {
+        numOfD100--;
+        D100input.value = numOfD100;
+        break;
+      } else {
+        return null;
+      }
+    case "D12":
+      if (numOfD12 > 0) {
+        numOfD12--;
+        D12input.value = numOfD12;
+        break;
+      } else {
+        return null;
+      }
+    case "D20":
+      if (numOfD20 > 0) {
+        numOfD20--;
+        D20input.value = numOfD20;
         break;
       } else {
         return null;

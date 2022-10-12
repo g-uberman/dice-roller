@@ -174,13 +174,12 @@ const rollAll = function () {
       currentRoll = rollDie(4);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D4: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D4: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D4icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D6s:
@@ -207,13 +206,12 @@ const rollAll = function () {
       currentRoll = rollDie(8);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D8: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D8: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D8icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D10s:
@@ -224,13 +222,12 @@ const rollAll = function () {
       currentRoll = rollDie(10);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D10: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D10: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D10icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D100s:
@@ -242,12 +239,12 @@ const rollAll = function () {
     }
     rollsTotal = rollsTotal + currentRoll;
     // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D100: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D100: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D100icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D12s:
@@ -258,13 +255,12 @@ const rollAll = function () {
       currentRoll = rollDie(12);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D12: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D12: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D12icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D20s:
@@ -275,13 +271,12 @@ const rollAll = function () {
       currentRoll = rollDie(20);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D20: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D20: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D20icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
 };
@@ -354,3 +349,11 @@ D20minus.addEventListener("click", (e) => {
 roll.addEventListener("click", () => {
   rollAll();
 });
+
+// DISPLAY RESULT:
+// if (individualResults.innerText == "") {
+//   individualResults.innerText = `D4: ${currentRoll}`;
+// } else {
+//   individualResults.innerText =
+//     individualResults.innerText + `, D4: ${currentRoll}`;
+// }

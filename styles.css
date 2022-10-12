@@ -70,11 +70,71 @@ h2 {
 }
 
 /* DICE ICONS */
+.D4icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d4.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
 .D6icon {
     display: inline-block;
     width: 40px;
     height: 40px;
     background: url('img/d6.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
+.D8icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d8.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
+.D10icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d10.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
+.D100icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d100.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
+.D12icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d12.svg');
+    background-size: cover;
+    color: #fff;
+    padding-top: 11px;
+}
+
+.D20icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('img/d20.svg');
     background-size: cover;
     color: #fff;
     padding-top: 11px;

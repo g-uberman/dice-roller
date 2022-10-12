@@ -89,7 +89,7 @@ minusDice = function (dice) {
       } else {
         return null;
       }
-    case "D4":
+    case "D6":
       if (numOfD6 > 0) {
         numOfD6--;
         D6input.value = numOfD6;

@@ -176,7 +176,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D4icon");
+    icon.classList.add("icon");
+    icon.classList.add("D4");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -192,7 +193,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D6icon");
+    icon.classList.add("icon");
+    icon.classList.add("D6");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -208,7 +210,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D8icon");
+    icon.classList.add("icon");
+    icon.classList.add("D8");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -224,7 +227,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D10icon");
+    icon.classList.add("icon");
+    icon.classList.add("D10");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -241,7 +245,8 @@ const rollAll = function () {
     // display:
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D100icon");
+    icon.classList.add("icon");
+    icon.classList.add("D100");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -257,7 +262,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D12icon");
+    icon.classList.add("icon");
+    icon.classList.add("D12");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 
@@ -273,7 +279,8 @@ const rollAll = function () {
     rollsTotal = rollsTotal + currentRoll;
     //Create element
     let icon = document.createElement("div");
-    icon.classList.add("D20icon");
+    icon.classList.add("icon");
+    icon.classList.add("D20");
     icon.innerText = currentRoll;
     individualResults.append(icon);
 

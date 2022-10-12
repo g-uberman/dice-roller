@@ -191,13 +191,12 @@ const rollAll = function () {
       currentRoll = rollDie(6);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // display:
-    if (individualResults.innerText == "") {
-      individualResults.innerText = `D6: ${currentRoll}`;
-    } else {
-      individualResults.innerText =
-        individualResults.innerText + `, D6: ${currentRoll}`;
-    }
+    //Create element
+    let icon = document.createElement("div");
+    icon.classList.add("D6icon");
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+
     rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D8s:

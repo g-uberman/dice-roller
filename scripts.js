@@ -43,46 +43,16 @@ let numOfD12 = 0;
 let numOfD20 = 0;
 
 // CREATE ARRAY FOR STORING NUMBER OF DICE
-const numberOfDice = []
-for ( let i = 0; i < 101; i++ ) {
+const numberOfDice = [];
+for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
 }
 
 // FUNCTIONS
 
-plusDice = function (dice) {
-  switch (dice) {
-    case "D4":
-      numberOfDice[4] = Number(numberOfDice[4]) + 1;
-      D4input.value = numberOfDice[4];
-      break;
-    case "D6":
-      numOfD6++;
-      D6input.value = numOfD6;
-      break;
-    case "D8":
-      numOfD8++;
-      D8input.value = numOfD8;
-      break;
-    case "D10":
-      numOfD10++;
-      D10input.value = numOfD10;
-      break;
-    case "D100":
-      numOfD100++;
-      D100input.value = numOfD100;
-      break;
-    case "D12":
-      numOfD12++;
-      D12input.value = numOfD12;
-      break;
-    case "D20":
-      numOfD20++;
-      D20input.value = numOfD20;
-      break;
-    default:
-      console.log("Dice not added yet.");
-  }
+const plusDice = function (sides) {
+  numberOfDice[sides]+= 1
+  D4input.value = numberOfDice[sides];
 };
 
 minusDice = function (dice) {
@@ -174,11 +144,8 @@ const createIcon = function (sides, currentRoll) {
   individualResults.append(icon);
 };
 
-
-
-
 const rollDtype = function (sides) {
-  let typeTotal = 0
+  let typeTotal = 0;
   let currentRoll = 0;
   for (let i = 0; i < numberOfDice[sides]; i++) {
     if (explodingCheckbox.checked == true) {
@@ -187,27 +154,27 @@ const rollDtype = function (sides) {
       currentRoll = rollDie(sides);
     }
     createIcon(sides, currentRoll);
-    typeTotal+= currentRoll
+    typeTotal += currentRoll;
   }
   return typeTotal;
 };
 
 const test = function (sides) {
-  console.log(numOfD4)
-}
+  console.log(numOfD4);
+};
 
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  rollsTotal+= rollDtype(4);
-  rollsTotal+= rollDtype(6);
-  rollsTotal+= rollDtype(8);
-  rollsTotal+= rollDtype(10);
-  rollsTotal+= rollDtype(100);
-  rollsTotal+= rollDtype(12);
-  rollsTotal+= rollDtype(20);
+  rollsTotal += rollDtype(4);
+  rollsTotal += rollDtype(6);
+  rollsTotal += rollDtype(8);
+  rollsTotal += rollDtype(10);
+  rollsTotal += rollDtype(100);
+  rollsTotal += rollDtype(12);
+  rollsTotal += rollDtype(20);
 
   // // ROLL ALL D6s:
   // for (let i = 0; i < numOfD6; i++) {
@@ -282,7 +249,7 @@ const rollAll = function () {
 // BUTTONS
 
 D4plus.addEventListener("click", (e) => {
-  plusDice("D4");
+  plusDice(4);
   e.preventDefault();
 });
 D4minus.addEventListener("click", (e) => {

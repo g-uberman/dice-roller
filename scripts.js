@@ -1,4 +1,4 @@
-// HOOKS
+// SELECTORS
 
 const D4input = document.getElementById("D4input");
 const D4plus = document.getElementById("D4plus");

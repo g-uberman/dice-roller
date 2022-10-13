@@ -180,8 +180,6 @@ const rollAll = function () {
     icon.classList.add("D4");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D6s:
   for (let i = 0; i < numOfD6; i++) {
@@ -197,8 +195,6 @@ const rollAll = function () {
     icon.classList.add("D6");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D8s:
   for (let i = 0; i < numOfD8; i++) {
@@ -214,8 +210,6 @@ const rollAll = function () {
     icon.classList.add("D8");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D10s:
   for (let i = 0; i < numOfD10; i++) {
@@ -231,8 +225,6 @@ const rollAll = function () {
     icon.classList.add("D10");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D100s:
   for (let i = 0; i < numOfD100; i++) {
@@ -248,8 +240,6 @@ const rollAll = function () {
     icon.classList.add("D100");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D12s:
   for (let i = 0; i < numOfD12; i++) {
@@ -265,8 +255,6 @@ const rollAll = function () {
     icon.classList.add("D12");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
   // ROLL ALL D20s:
   for (let i = 0; i < numOfD20; i++) {
@@ -282,9 +270,9 @@ const rollAll = function () {
     icon.classList.add("D20");
     icon.innerText = currentRoll;
     individualResults.append(icon);
-    // Display total:
-    rollResult.innerText = rollsTotal;
   }
+  // Display total:
+  rollResult.innerText = rollsTotal;
 };
 
 // BUTTONS

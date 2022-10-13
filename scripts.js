@@ -42,13 +42,19 @@ let numOfD100 = 0;
 let numOfD12 = 0;
 let numOfD20 = 0;
 
+// CREATE ARRAY FOR STORING NUMBER OF DICE
+const numberOfDice = []
+for ( let i = 0; i < 101; i++ ) {
+  numberOfDice.push(0);
+}
+
 // FUNCTIONS
 
 plusDice = function (dice) {
   switch (dice) {
     case "D4":
-      numOfD4++;
-      D4input.value = numOfD4;
+      numberOfDice[4] = Number(numberOfDice[4]) + 1;
+      D4input.value = numberOfDice[4];
       break;
     case "D6":
       numOfD6++;
@@ -161,11 +167,33 @@ const rollExploding = function (sides) {
 };
 
 const createIcon = function (sides, currentRoll) {
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add(`D${sides}`);
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+  let icon = document.createElement("div");
+  icon.classList.add("icon");
+  icon.classList.add(`D${sides}`);
+  icon.innerText = currentRoll;
+  individualResults.append(icon);
+};
+
+
+
+
+const rollDtype = function (sides) {
+  let typeTotal = 0
+  let currentRoll = 0;
+  for (let i = 0; i < numberOfDice[sides]; i++) {
+    if (explodingCheckbox.checked == true) {
+      currentRoll = rollExploding(sides);
+    } else {
+      currentRoll = rollDie(sides);
+    }
+    createIcon(sides, currentRoll);
+    typeTotal+= currentRoll
+  }
+  return typeTotal;
+};
+
+const test = function (sides) {
+  console.log(numOfD4)
 }
 
 // ROLL BUTTON EFFECT
@@ -173,84 +201,81 @@ const createIcon = function (sides, currentRoll) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  let currentRoll = 0;
-  // ROLL ALL D4s:
-  for (let i = 0; i < numOfD4; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(4);
-    } else {
-      currentRoll = rollDie(4);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(4, currentRoll);
-  }
-  // ROLL ALL D6s:
-  for (let i = 0; i < numOfD6; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(6);
-    } else {
-      currentRoll = rollDie(6);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    // let icon = document.createElement("div");
-    // icon.classList.add("icon");
-    // icon.classList.add("D6");
-    // icon.innerText = currentRoll;
-    // individualResults.append(icon);
-    createIcon(6, currentRoll);
-  }
-  // ROLL ALL D8s:
-  for (let i = 0; i < numOfD8; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(8);
-    } else {
-      currentRoll = rollDie(8);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(8, currentRoll);
-  }
-  // ROLL ALL D10s:
-  for (let i = 0; i < numOfD10; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(10);
-    } else {
-      currentRoll = rollDie(10);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(10, currentRoll);
-  }
-  // ROLL ALL D100s:
-  for (let i = 0; i < numOfD100; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(100);
-    } else {
-      currentRoll = rollDie(100);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(100, currentRoll);
-  }
-  // ROLL ALL D12s:
-  for (let i = 0; i < numOfD12; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(12);
-    } else {
-      currentRoll = rollDie(12);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(12, currentRoll);
-  }
-  // ROLL ALL D20s:
-  for (let i = 0; i < numOfD20; i++) {
-    if (explodingCheckbox.checked == true) {
-      currentRoll = rollExploding(20);
-    } else {
-      currentRoll = rollDie(20);
-    }
-    rollsTotal = rollsTotal + currentRoll;
-    createIcon(20, currentRoll);
-  }
-  // Display total:
+  rollsTotal+= rollDtype(4);
+  rollsTotal+= rollDtype(6);
+  rollsTotal+= rollDtype(8);
+  rollsTotal+= rollDtype(10);
+  rollsTotal+= rollDtype(100);
+  rollsTotal+= rollDtype(12);
+  rollsTotal+= rollDtype(20);
+
+  // // ROLL ALL D6s:
+  // for (let i = 0; i < numOfD6; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(6);
+  //   } else {
+  //     currentRoll = rollDie(6);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   // Create element:
+  //   // let icon = document.createElement("div");
+  //   // icon.classList.add("icon");
+  //   // icon.classList.add("D6");
+  //   // icon.innerText = currentRoll;
+  //   // individualResults.append(icon);
+  //   createIcon(6, currentRoll);
+  // }
+  // // ROLL ALL D8s:
+  // for (let i = 0; i < numOfD8; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(8);
+  //   } else {
+  //     currentRoll = rollDie(8);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   createIcon(8, currentRoll);
+  // }
+  // // ROLL ALL D10s:
+  // for (let i = 0; i < numOfD10; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(10);
+  //   } else {
+  //     currentRoll = rollDie(10);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   createIcon(10, currentRoll);
+  // }
+  // // ROLL ALL D100s:
+  // for (let i = 0; i < numOfD100; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(100);
+  //   } else {
+  //     currentRoll = rollDie(100);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   createIcon(100, currentRoll);
+  // }
+  // // ROLL ALL D12s:
+  // for (let i = 0; i < numOfD12; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(12);
+  //   } else {
+  //     currentRoll = rollDie(12);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   createIcon(12, currentRoll);
+  // }
+  // // ROLL ALL D20s:
+  // for (let i = 0; i < numOfD20; i++) {
+  //   if (explodingCheckbox.checked == true) {
+  //     currentRoll = rollExploding(20);
+  //   } else {
+  //     currentRoll = rollDie(20);
+  //   }
+  //   rollsTotal = rollsTotal + currentRoll;
+  //   createIcon(20, currentRoll);
+  // }
+  // // Display total:
   rollResult.innerText = rollsTotal;
 };
 

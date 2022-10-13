@@ -50,15 +50,15 @@ for (let i = 0; i < 101; i++) {
 
 // FUNCTIONS
 
-const plusDice = function (sides) {
+const plusDice = function (sides, input) {
   numberOfDice[sides]+= 1
-  D4input.value = numberOfDice[sides];
+  input.value = numberOfDice[sides];
 };
 
-const minusDice = function (sides) {
+const minusDice = function (sides, input) {
   if ( numberOfDice[sides] > 0 ) {
   numberOfDice[sides]-= 1
-  D4input.value = numberOfDice[sides];
+  input.value = numberOfDice[sides];
   } else {
     return null;
   }
@@ -258,65 +258,65 @@ const rollAll = function () {
 // BUTTONS
 
 D4plus.addEventListener("click", (e) => {
-  plusDice(4);
+  plusDice(4, D4input);
   e.preventDefault();
 });
 D4minus.addEventListener("click", (e) => {
-  minusDice(4);
+  minusDice(4, D4input);
   e.preventDefault();
 });
 
 D6plus.addEventListener("click", (e) => {
-  plusDice(6);
+  plusDice(6, D6input);
   e.preventDefault();
 });
 D6minus.addEventListener("click", (e) => {
-  minusDice(6);
+  minusDice(6, D6input);
   e.preventDefault();
 });
 
 D8plus.addEventListener("click", (e) => {
-  plusDice(8);
+  plusDice(8, D8input);
   e.preventDefault();
 });
 D8minus.addEventListener("click", (e) => {
-  minusDice(8);
+  minusDice(8, D8input);
   e.preventDefault();
 });
 
 D10plus.addEventListener("click", (e) => {
-  plusDice(10);
+  plusDice(10, D10input);
   e.preventDefault();
 });
 D10minus.addEventListener("click", (e) => {
-  minusDice(10);
+  minusDice(10, D10input);
   e.preventDefault();
 });
 
 D100plus.addEventListener("click", (e) => {
-  plusDice(100);
+  plusDice(100, D100input);
   e.preventDefault();
 });
 D100minus.addEventListener("click", (e) => {
-  minusDice(100);
+  minusDice(100, D100input);
   e.preventDefault();
 });
 
 D12plus.addEventListener("click", (e) => {
-  plusDice(12);
+  plusDice(12, D12input);
   e.preventDefault();
 });
 D12minus.addEventListener("click", (e) => {
-  minusDice(12);
+  minusDice(12, D12input);
   e.preventDefault();
 });
 
 D20plus.addEventListener("click", (e) => {
-  plusDice(20);
+  plusDice(20, D20input);
   e.preventDefault();
 });
 D20minus.addEventListener("click", (e) => {
-  minusDice(20);
+  minusDice(20, D20input);
   e.preventDefault();
 });
 

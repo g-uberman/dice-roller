@@ -160,6 +160,14 @@ const rollExploding = function (sides) {
   return dieTotal;
 };
 
+const createIcon = function (sides, currentRoll) {
+    let icon = document.createElement("div");
+    icon.classList.add("icon");
+    icon.classList.add(`D${sides}`);
+    icon.innerText = currentRoll;
+    individualResults.append(icon);
+}
+
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
@@ -174,12 +182,7 @@ const rollAll = function () {
       currentRoll = rollDie(4);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D4");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(4, currentRoll);
   }
   // ROLL ALL D6s:
   for (let i = 0; i < numOfD6; i++) {
@@ -190,11 +193,12 @@ const rollAll = function () {
     }
     rollsTotal = rollsTotal + currentRoll;
     // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D6");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    // let icon = document.createElement("div");
+    // icon.classList.add("icon");
+    // icon.classList.add("D6");
+    // icon.innerText = currentRoll;
+    // individualResults.append(icon);
+    createIcon(6, currentRoll);
   }
   // ROLL ALL D8s:
   for (let i = 0; i < numOfD8; i++) {
@@ -204,12 +208,7 @@ const rollAll = function () {
       currentRoll = rollDie(8);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D8");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(8, currentRoll);
   }
   // ROLL ALL D10s:
   for (let i = 0; i < numOfD10; i++) {
@@ -219,12 +218,7 @@ const rollAll = function () {
       currentRoll = rollDie(10);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D10");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(10, currentRoll);
   }
   // ROLL ALL D100s:
   for (let i = 0; i < numOfD100; i++) {
@@ -234,12 +228,7 @@ const rollAll = function () {
       currentRoll = rollDie(100);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D100");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(100, currentRoll);
   }
   // ROLL ALL D12s:
   for (let i = 0; i < numOfD12; i++) {
@@ -249,12 +238,7 @@ const rollAll = function () {
       currentRoll = rollDie(12);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D12");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(12, currentRoll);
   }
   // ROLL ALL D20s:
   for (let i = 0; i < numOfD20; i++) {
@@ -264,12 +248,7 @@ const rollAll = function () {
       currentRoll = rollDie(20);
     }
     rollsTotal = rollsTotal + currentRoll;
-    // Create element:
-    let icon = document.createElement("div");
-    icon.classList.add("icon");
-    icon.classList.add("D20");
-    icon.innerText = currentRoll;
-    individualResults.append(icon);
+    createIcon(20, currentRoll);
   }
   // Display total:
   rollResult.innerText = rollsTotal;

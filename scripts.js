@@ -55,68 +55,77 @@ const plusDice = function (sides) {
   D4input.value = numberOfDice[sides];
 };
 
-minusDice = function (dice) {
-  switch (dice) {
-    case "D4":
-      if (numOfD4 > 0) {
-        numOfD4--;
-        D4input.value = numOfD6;
-        break;
-      } else {
-        return null;
-      }
-    case "D6":
-      if (numOfD6 > 0) {
-        numOfD6--;
-        D6input.value = numOfD6;
-        break;
-      } else {
-        return null;
-      }
-    case "D8":
-      if (numOfD8 > 0) {
-        numOfD8--;
-        D8input.value = numOfD8;
-        break;
-      } else {
-        return null;
-      }
-    case "D10":
-      if (numOfD10 > 0) {
-        numOfD10--;
-        D10input.value = numOfD10;
-        break;
-      } else {
-        return null;
-      }
-    case "D100":
-      if (numOfD100 > 0) {
-        numOfD100--;
-        D100input.value = numOfD100;
-        break;
-      } else {
-        return null;
-      }
-    case "D12":
-      if (numOfD12 > 0) {
-        numOfD12--;
-        D12input.value = numOfD12;
-        break;
-      } else {
-        return null;
-      }
-    case "D20":
-      if (numOfD20 > 0) {
-        numOfD20--;
-        D20input.value = numOfD20;
-        break;
-      } else {
-        return null;
-      }
-    default:
-      console.log("Dice not added yet.");
+const minusDice = function (sides) {
+  if ( numberOfDice[sides] > 0 ) {
+  numberOfDice[sides]-= 1
+  D4input.value = numberOfDice[sides];
+  } else {
+    return null;
   }
 };
+
+// minusDice = function (dice) {
+//   switch (dice) {
+//     case "D4":
+//       if (numOfD4 > 0) {
+//         numOfD4--;
+//         D4input.value = numOfD6;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D6":
+//       if (numOfD6 > 0) {
+//         numOfD6--;
+//         D6input.value = numOfD6;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D8":
+//       if (numOfD8 > 0) {
+//         numOfD8--;
+//         D8input.value = numOfD8;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D10":
+//       if (numOfD10 > 0) {
+//         numOfD10--;
+//         D10input.value = numOfD10;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D100":
+//       if (numOfD100 > 0) {
+//         numOfD100--;
+//         D100input.value = numOfD100;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D12":
+//       if (numOfD12 > 0) {
+//         numOfD12--;
+//         D12input.value = numOfD12;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     case "D20":
+//       if (numOfD20 > 0) {
+//         numOfD20--;
+//         D20input.value = numOfD20;
+//         break;
+//       } else {
+//         return null;
+//       }
+//     default:
+//       console.log("Dice not added yet.");
+//   }
+// };
 
 // ROLL MECHANIC
 
@@ -253,7 +262,7 @@ D4plus.addEventListener("click", (e) => {
   e.preventDefault();
 });
 D4minus.addEventListener("click", (e) => {
-  minusDice("D4");
+  minusDice(4);
   e.preventDefault();
 });
 

@@ -32,17 +32,8 @@ const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
 const explodingCheckbox = document.getElementById("exploding");
 
-// VARIABLES
+// ARRAY FOR STORING NUMBER OF DICE
 
-let numOfD4 = 0;
-let numOfD6 = 0;
-let numOfD8 = 0;
-let numOfD10 = 0;
-let numOfD100 = 0;
-let numOfD12 = 0;
-let numOfD20 = 0;
-
-// CREATE ARRAY FOR STORING NUMBER OF DICE
 const numberOfDice = [];
 for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
@@ -64,70 +55,7 @@ const minusDice = function (sides, input) {
   }
 };
 
-// minusDice = function (dice) {
-//   switch (dice) {
-//     case "D4":
-//       if (numOfD4 > 0) {
-//         numOfD4--;
-//         D4input.value = numOfD6;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D6":
-//       if (numOfD6 > 0) {
-//         numOfD6--;
-//         D6input.value = numOfD6;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D8":
-//       if (numOfD8 > 0) {
-//         numOfD8--;
-//         D8input.value = numOfD8;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D10":
-//       if (numOfD10 > 0) {
-//         numOfD10--;
-//         D10input.value = numOfD10;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D100":
-//       if (numOfD100 > 0) {
-//         numOfD100--;
-//         D100input.value = numOfD100;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D12":
-//       if (numOfD12 > 0) {
-//         numOfD12--;
-//         D12input.value = numOfD12;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     case "D20":
-//       if (numOfD20 > 0) {
-//         numOfD20--;
-//         D20input.value = numOfD20;
-//         break;
-//       } else {
-//         return null;
-//       }
-//     default:
-//       console.log("Dice not added yet.");
-//   }
-// };
-
-// ROLL MECHANIC
+// ROLL MECHANICS
 
 const rollDie = function (sides) {
   let dieCurrent = Math.ceil(Math.random() * Number(sides));
@@ -168,10 +96,6 @@ const rollDtype = function (sides) {
   return typeTotal;
 };
 
-const test = function (sides) {
-  console.log(numOfD4);
-};
-
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
@@ -184,74 +108,6 @@ const rollAll = function () {
   rollsTotal += rollDtype(100);
   rollsTotal += rollDtype(12);
   rollsTotal += rollDtype(20);
-
-  // // ROLL ALL D6s:
-  // for (let i = 0; i < numOfD6; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(6);
-  //   } else {
-  //     currentRoll = rollDie(6);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   // Create element:
-  //   // let icon = document.createElement("div");
-  //   // icon.classList.add("icon");
-  //   // icon.classList.add("D6");
-  //   // icon.innerText = currentRoll;
-  //   // individualResults.append(icon);
-  //   createIcon(6, currentRoll);
-  // }
-  // // ROLL ALL D8s:
-  // for (let i = 0; i < numOfD8; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(8);
-  //   } else {
-  //     currentRoll = rollDie(8);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   createIcon(8, currentRoll);
-  // }
-  // // ROLL ALL D10s:
-  // for (let i = 0; i < numOfD10; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(10);
-  //   } else {
-  //     currentRoll = rollDie(10);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   createIcon(10, currentRoll);
-  // }
-  // // ROLL ALL D100s:
-  // for (let i = 0; i < numOfD100; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(100);
-  //   } else {
-  //     currentRoll = rollDie(100);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   createIcon(100, currentRoll);
-  // }
-  // // ROLL ALL D12s:
-  // for (let i = 0; i < numOfD12; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(12);
-  //   } else {
-  //     currentRoll = rollDie(12);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   createIcon(12, currentRoll);
-  // }
-  // // ROLL ALL D20s:
-  // for (let i = 0; i < numOfD20; i++) {
-  //   if (explodingCheckbox.checked == true) {
-  //     currentRoll = rollExploding(20);
-  //   } else {
-  //     currentRoll = rollDie(20);
-  //   }
-  //   rollsTotal = rollsTotal + currentRoll;
-  //   createIcon(20, currentRoll);
-  // }
-  // // Display total:
   rollResult.innerText = rollsTotal;
 };
 

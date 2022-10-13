@@ -267,56 +267,56 @@ D4minus.addEventListener("click", (e) => {
 });
 
 D6plus.addEventListener("click", (e) => {
-  plusDice("D6");
+  plusDice(6);
   e.preventDefault();
 });
 D6minus.addEventListener("click", (e) => {
-  minusDice("D6");
+  minusDice(6);
   e.preventDefault();
 });
 
 D8plus.addEventListener("click", (e) => {
-  plusDice("D8");
+  plusDice(8);
   e.preventDefault();
 });
 D8minus.addEventListener("click", (e) => {
-  minusDice("D8");
+  minusDice(8);
   e.preventDefault();
 });
 
 D10plus.addEventListener("click", (e) => {
-  plusDice("D10");
+  plusDice(10);
   e.preventDefault();
 });
 D10minus.addEventListener("click", (e) => {
-  minusDice("D10");
+  minusDice(10);
   e.preventDefault();
 });
 
 D100plus.addEventListener("click", (e) => {
-  plusDice("D100");
+  plusDice(100);
   e.preventDefault();
 });
 D100minus.addEventListener("click", (e) => {
-  minusDice("D100");
+  minusDice(100);
   e.preventDefault();
 });
 
 D12plus.addEventListener("click", (e) => {
-  plusDice("D12");
+  plusDice(12);
   e.preventDefault();
 });
 D12minus.addEventListener("click", (e) => {
-  minusDice("D12");
+  minusDice(12);
   e.preventDefault();
 });
 
 D20plus.addEventListener("click", (e) => {
-  plusDice("D20");
+  plusDice(20);
   e.preventDefault();
 });
 D20minus.addEventListener("click", (e) => {
-  minusDice("D20");
+  minusDice(20);
   e.preventDefault();
 });
 

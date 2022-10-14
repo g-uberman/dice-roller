@@ -88,17 +88,17 @@ const minusDice = function (sides, input) {
 
 // ROLL MECHANICS
 
-const rollDie = function (sides) {
+const rollOnce = function (sides) {
   let dieCurrent = Math.ceil(Math.random() * Number(sides));
   return dieCurrent;
 };
 
 const rollExploding = function (sides) {
   let dieTotal = 0;
-  let dieCurrent = rollDie(sides);
+  let dieCurrent = rollOnce(sides);
   dieTotal = dieTotal + dieCurrent;
   for (dieCurrent; dieCurrent == sides; ) {
-    dieCurrent = rollDie(sides);
+    dieCurrent = rollOnce(sides);
     dieTotal = dieTotal + dieCurrent;
   }
   return dieTotal;
@@ -119,7 +119,7 @@ const rollDtype = function (sides) {
     if (explodingCheckbox.checked == true) {
       currentRoll = rollExploding(sides);
     } else {
-      currentRoll = rollDie(sides);
+      currentRoll = rollOnce(sides);
     }
     createIcon(sides, currentRoll);
     typeTotal += currentRoll;

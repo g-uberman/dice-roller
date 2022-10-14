@@ -42,14 +42,14 @@ for (let i = 0; i < 101; i++) {
 // FUNCTIONS
 
 const plusDice = function (sides, input) {
-  numberOfDice[sides]+= 1
+  numberOfDice[sides] += 1;
   input.value = numberOfDice[sides];
 };
 
 const minusDice = function (sides, input) {
-  if ( numberOfDice[sides] > 0 ) {
-  numberOfDice[sides]-= 1
-  input.value = numberOfDice[sides];
+  if (numberOfDice[sides] > 0) {
+    numberOfDice[sides] -= 1;
+    input.value = numberOfDice[sides];
   } else {
     return null;
   }
@@ -101,13 +101,14 @@ const rollDtype = function (sides) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  rollsTotal += rollDtype(4);
-  rollsTotal += rollDtype(6);
-  rollsTotal += rollDtype(8);
-  rollsTotal += rollDtype(10);
-  rollsTotal += rollDtype(100);
-  rollsTotal += rollDtype(12);
-  rollsTotal += rollDtype(20);
+  rollsTotal +=
+    rollDtype(4) +
+    rollDtype(6) +
+    rollDtype(8) +
+    rollDtype(10) +
+    rollDtype(100) +
+    rollDtype(12) +
+    rollDtype(20);
   rollResult.innerText = rollsTotal;
 };
 

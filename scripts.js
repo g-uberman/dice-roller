@@ -1,6 +1,6 @@
 // STORING ARRAYS
 
-const diceTypes = [4, 6, 8, 10, 100, 12, 20, 3];
+const diceTypes = [4, 6, 8, 10, 12, 20];
 
 let selectors = [];
 
@@ -83,9 +83,7 @@ const minusDice = function (sides, input) {
   if (numberOfDice[sides] > 0) {
     numberOfDice[sides] -= 1;
     input.value = numberOfDice[sides];
-  } else {
-    return null;
-  }
+  } ;
 };
 
 // ROLL MECHANICS

@@ -1,32 +1,32 @@
 // SELECTORS
 
-const D4input = document.getElementById("D4input");
-const D4plus = document.getElementById("D4plus");
-const D4minus = document.getElementById("D4minus");
+// const D4input = document.getElementById("D4input");
+// const D4plus = document.getElementById("D4plus");
+// const D4minus = document.getElementById("D4minus");
 
-const D6input = document.getElementById("D6input");
-const D6plus = document.getElementById("D6plus");
-const D6minus = document.getElementById("D6minus");
+// const D6input = document.getElementById("D6input");
+// const D6plus = document.getElementById("D6plus");
+// const D6minus = document.getElementById("D6minus");
 
-const D8input = document.getElementById("D8input");
-const D8plus = document.getElementById("D8plus");
-const D8minus = document.getElementById("D8minus");
+// const D8input = document.getElementById("D8input");
+// const D8plus = document.getElementById("D8plus");
+// const D8minus = document.getElementById("D8minus");
 
-const D10input = document.getElementById("D10input");
-const D10plus = document.getElementById("D10plus");
-const D10minus = document.getElementById("D10minus");
+// const D10input = document.getElementById("D10input");
+// const D10plus = document.getElementById("D10plus");
+// const D10minus = document.getElementById("D10minus");
 
-const D100input = document.getElementById("D100input");
-const D100plus = document.getElementById("D100plus");
-const D100minus = document.getElementById("D100minus");
+// const D100input = document.getElementById("D100input");
+// const D100plus = document.getElementById("D100plus");
+// const D100minus = document.getElementById("D100minus");
 
-const D12input = document.getElementById("D12input");
-const D12plus = document.getElementById("D12plus");
-const D12minus = document.getElementById("D12minus");
+// const D12input = document.getElementById("D12input");
+// const D12plus = document.getElementById("D12plus");
+// const D12minus = document.getElementById("D12minus");
 
-const D20input = document.getElementById("D20input");
-const D20plus = document.getElementById("D20plus");
-const D20minus = document.getElementById("D20minus");
+// const D20input = document.getElementById("D20input");
+// const D20plus = document.getElementById("D20plus");
+// const D20minus = document.getElementById("D20minus");
 
 const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
@@ -34,11 +34,11 @@ const explodingCheckbox = document.getElementById("exploding");
 
 const cardContainer = document.getElementsByClassName("container")[0];
 
-// DICE TYPES ARRAY
+// STORING ARRAYS
 
 const diceTypes = [4, 6, 8, 10, 100, 12, 20];
 
-// NUMBER OF DICE STORING ARRAY
+let selectors = [];
 
 const numberOfDice = [];
 for (let i = 0; i < 101; i++) {
@@ -47,25 +47,33 @@ for (let i = 0; i < 101; i++) {
 
 // GENERATE DICE WRAPPERS
 
-const generateCard = function (sides) {
-  const dieWrapper = document.createElement("div");
-  dieWrapper.classList.add("dieWrapper");
-  dieWrapper.innerHTML = `
-  <h2>D${sides}</h2>
-  <form class="dieForm" type="get">
-      <div>
-          <input id="D${sides}input" class="numInput" value="0"/>
-          <button id="D${sides}plus" class="numHandler" onclick="return null">+</button>
-          <button id="D${sides}0minus" class="numHandler">-</button>
-      </div>
-  </form>
-  `;
-  cardContainer.append(dieWrapper);
+
+const generateAll = function (array) {
+  generateCards(array);
+  generateSelectors(array);
+  generateEventListeners(array);
 }
 
-let selectors = [];
+const generateCards = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    const dieWrapper = document.createElement("div");
+    dieWrapper.classList.add("dieWrapper");
+    dieWrapper.innerHTML = `
+      <h2>D${array[i]}</h2>
+      <form class="dieForm" type="get">
+          <div>
+              <input id="D${array[i]}input" class="numInput" value="0"/>
+              <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
+              <button id="D${array[i]}minus" class="numHandler">-</button>
+          </div>
+      </form>
+      `;
+    cardContainer.append(dieWrapper);
+  }
+};
+
 const generateSelectors = function (array) {
-  for ( let i = 0 ; i < array.length ; i++ ) {
+  for (let i = 0; i < array.length; i++) {
     let object = {
       sides: array[i],
       input: document.getElementById(`D${array[i]}input`),
@@ -74,8 +82,22 @@ const generateSelectors = function (array) {
     };
     selectors.push(object);
   }
-}
-generateSelectors(diceTypes);
+};
+
+const generateEventListeners = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    selectors[i].plus.addEventListener("click", (e) => {
+      plusDice(selectors[i].sides, selectors[i].input);
+      e.preventDefault();
+    });
+    selectors[i].minus.addEventListener("click", (e) => {
+      minusDice(selectors[i].sides, selectors[i].input);
+      e.preventDefault();
+    });
+  }
+};
+
+generateAll(diceTypes);
 
 // FUNCTIONS
 
@@ -152,68 +174,68 @@ const rollAll = function () {
 
 // BUTTONS
 
-D4plus.addEventListener("click", (e) => {
-  plusDice(4, D4input);
-  e.preventDefault();
-});
-D4minus.addEventListener("click", (e) => {
-  minusDice(4, D4input);
-  e.preventDefault();
-});
+// D4plus.addEventListener("click", (e) => {
+//   plusDice(4, D4input);
+//   e.preventDefault();
+// });
+// D4minus.addEventListener("click", (e) => {
+//   minusDice(4, D4input);
+//   e.preventDefault();
+// });
 
-D6plus.addEventListener("click", (e) => {
-  plusDice(6, D6input);
-  e.preventDefault();
-});
-D6minus.addEventListener("click", (e) => {
-  minusDice(6, D6input);
-  e.preventDefault();
-});
+// D6plus.addEventListener("click", (e) => {
+//   plusDice(6, D6input);
+//   e.preventDefault();
+// });
+// D6minus.addEventListener("click", (e) => {
+//   minusDice(6, D6input);
+//   e.preventDefault();
+// });
 
-D8plus.addEventListener("click", (e) => {
-  plusDice(8, D8input);
-  e.preventDefault();
-});
-D8minus.addEventListener("click", (e) => {
-  minusDice(8, D8input);
-  e.preventDefault();
-});
+// D8plus.addEventListener("click", (e) => {
+//   plusDice(8, D8input);
+//   e.preventDefault();
+// });
+// D8minus.addEventListener("click", (e) => {
+//   minusDice(8, D8input);
+//   e.preventDefault();
+// });
 
-D10plus.addEventListener("click", (e) => {
-  plusDice(10, D10input);
-  e.preventDefault();
-});
-D10minus.addEventListener("click", (e) => {
-  minusDice(10, D10input);
-  e.preventDefault();
-});
+// D10plus.addEventListener("click", (e) => {
+//   plusDice(10, D10input);
+//   e.preventDefault();
+// });
+// D10minus.addEventListener("click", (e) => {
+//   minusDice(10, D10input);
+//   e.preventDefault();
+// });
 
-D100plus.addEventListener("click", (e) => {
-  plusDice(100, D100input);
-  e.preventDefault();
-});
-D100minus.addEventListener("click", (e) => {
-  minusDice(100, D100input);
-  e.preventDefault();
-});
+// D100plus.addEventListener("click", (e) => {
+//   plusDice(100, D100input);
+//   e.preventDefault();
+// });
+// D100minus.addEventListener("click", (e) => {
+//   minusDice(100, D100input);
+//   e.preventDefault();
+// });
 
-D12plus.addEventListener("click", (e) => {
-  plusDice(12, D12input);
-  e.preventDefault();
-});
-D12minus.addEventListener("click", (e) => {
-  minusDice(12, D12input);
-  e.preventDefault();
-});
+// D12plus.addEventListener("click", (e) => {
+//   plusDice(12, D12input);
+//   e.preventDefault();
+// });
+// D12minus.addEventListener("click", (e) => {
+//   minusDice(12, D12input);
+//   e.preventDefault();
+// });
 
-D20plus.addEventListener("click", (e) => {
-  plusDice(20, D20input);
-  e.preventDefault();
-});
-D20minus.addEventListener("click", (e) => {
-  minusDice(20, D20input);
-  e.preventDefault();
-});
+// D20plus.addEventListener("click", (e) => {
+//   plusDice(20, D20input);
+//   e.preventDefault();
+// });
+// D20minus.addEventListener("click", (e) => {
+//   minusDice(20, D20input);
+//   e.preventDefault();
+// });
 
 roll.addEventListener("click", () => {
   rollAll();

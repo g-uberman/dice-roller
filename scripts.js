@@ -1,6 +1,6 @@
 // STORING ARRAYS
 
-const diceTypes = [4, 6, 8, 10, 12, 20, 3];
+const diceTypes = [4, 6, 8, 10, 12, 20];
 
 let selectors = [];
 

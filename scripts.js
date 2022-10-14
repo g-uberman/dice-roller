@@ -32,12 +32,50 @@ const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
 const explodingCheckbox = document.getElementById("exploding");
 
-// ARRAY FOR STORING NUMBER OF DICE
+const cardContainer = document.getElementsByClassName("container")[0];
+
+// DICE TYPES ARRAY
+
+const diceTypes = [4, 6, 8, 10, 100, 12, 20];
+
+// NUMBER OF DICE STORING ARRAY
 
 const numberOfDice = [];
 for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
 }
+
+// GENERATE DICE WRAPPERS
+
+const generateCard = function (sides) {
+  const dieWrapper = document.createElement("div");
+  dieWrapper.classList.add("dieWrapper");
+  dieWrapper.innerHTML = `
+  <h2>D${sides}</h2>
+  <form class="dieForm" type="get">
+      <div>
+          <input id="D${sides}input" class="numInput" value="0"/>
+          <button id="D${sides}plus" class="numHandler" onclick="return null">+</button>
+          <button id="D${sides}0minus" class="numHandler">-</button>
+      </div>
+  </form>
+  `;
+  cardContainer.append(dieWrapper);
+}
+
+let selectors = [];
+const generateSelectors = function (array) {
+  for ( let i = 0 ; i < array.length ; i++ ) {
+    let object = {
+      sides: array[i],
+      input: document.getElementById(`D${array[i]}input`),
+      plus: document.getElementById(`D${array[i]}plus`),
+      minus: document.getElementById(`D${array[i]}minus`),
+    };
+    selectors.push(object);
+  }
+}
+generateSelectors(diceTypes);
 
 // FUNCTIONS
 

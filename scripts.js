@@ -132,7 +132,8 @@ const rollDtype = function (sides) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  for ( let i = 0; i < numberOfDice.length; i++ ) {
+  for ( let i = numberOfDice.length; i > 0; i-- ) {
+//for ( let i = 0; i < numberOfDice.length; i++ ) {       <- normal direction
   rollsTotal +=
     rollDtype(i);
   }

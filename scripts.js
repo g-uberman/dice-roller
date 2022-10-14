@@ -34,8 +34,10 @@ const generateCards = function (array) {
       <form class="dieForm" type="get">
           <div>
               <input id="D${array[i]}input" class="numInput" value="0"/>
+              <section>
               <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               <button id="D${array[i]}minus" class="numHandler">-</button>
+              </section>
           </div>
       </form>
       `;

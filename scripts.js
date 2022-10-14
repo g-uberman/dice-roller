@@ -1,6 +1,6 @@
 // STORING ARRAYS
 
-const diceTypes = [4, 6, 8, 10, 100, 12, 20];
+const diceTypes = [4, 6, 8, 10, 100, 12, 20, 3];
 
 let selectors = [];
 
@@ -23,7 +23,7 @@ const generateAll = function (array) {
   generateCards(array);
   generateSelectors(array);
   generateEventListeners(array);
-}
+};
 
 const generateCards = function (array) {
   for (let i = 0; i < array.length; i++) {
@@ -72,7 +72,7 @@ const generateEventListeners = function (array) {
 
 generateAll(diceTypes);
 
-// FUNCTIONS
+// INPUT FUNCTIONS
 
 const plusDice = function (sides, input) {
   numberOfDice[sides] += 1;
@@ -134,14 +134,10 @@ const rollDtype = function (sides) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
+  for ( let i = 0; i < numberOfDice.length; i++ ) {
   rollsTotal +=
-    rollDtype(4) +
-    rollDtype(6) +
-    rollDtype(8) +
-    rollDtype(10) +
-    rollDtype(100) +
-    rollDtype(12) +
-    rollDtype(20);
+    rollDtype(i);
+  }
   rollResult.innerText = rollsTotal;
 };
 
@@ -150,11 +146,3 @@ const rollAll = function () {
 roll.addEventListener("click", () => {
   rollAll();
 });
-
-// DISPLAY RESULT:
-// if (individualResults.innerText == "") {
-//   individualResults.innerText = `D4: ${currentRoll}`;
-// } else {
-//   individualResults.innerText =
-//     individualResults.innerText + `, D4: ${currentRoll}`;
-// }

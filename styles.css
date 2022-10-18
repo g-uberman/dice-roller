@@ -76,6 +76,10 @@ h2 {
     border-radius: 3px;
 }
 
+input[type=checkbox] {
+    accent-color: #000;
+}
+
 .result {
     margin-top: 20px;
 }

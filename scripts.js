@@ -83,7 +83,7 @@ const minusDice = function (sides, input) {
   if (numberOfDice[sides] > 0) {
     numberOfDice[sides] -= 1;
     input.value = numberOfDice[sides];
-  } ;
+  }
 };
 
 // ROLL MECHANICS
@@ -132,23 +132,29 @@ const rollDtype = function (sides) {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  for ( let i = numberOfDice.length; i > 0; i-- ) {
-//for ( let i = 0; i < numberOfDice.length; i++ ) {       <- normal direction
-  rollsTotal +=
-    rollDtype(i);
+  for (let i = numberOfDice.length; i > 0; i--) {
+    //for ( let i = 0; i < numberOfDice.length; i++ ) {       <- normal direction
+    rollsTotal += rollDtype(i);
   }
   rollResult.innerText = rollsTotal;
 };
 
 const clearAll = function () {
-  
-}
+  for (let i = 0; i < diceTypes.length; i++) {
+    selectors[i].input.value = 0;
+  }
+  for (let i = 0; i < numberOfDice.length; i++) {
+    numberOfDice[i] = 0;
+  }
+
+};
 
 // BUTTONS
 
 roll.addEventListener("click", () => {
   rollAll();
 });
+
 clear.addEventListener("click", () => {
   clearAll();
 });

@@ -140,8 +140,15 @@ const rollAll = function () {
   rollResult.innerText = rollsTotal;
 };
 
+const clearAll = function () {
+  
+}
+
 // BUTTONS
 
 roll.addEventListener("click", () => {
   rollAll();
+});
+clear.addEventListener("click", () => {
+  clearAll();
 });

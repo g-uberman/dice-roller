@@ -146,7 +146,8 @@ const clearAll = function () {
   for (let i = 0; i < numberOfDice.length; i++) {
     numberOfDice[i] = 0;
   }
-
+  rollResult.innerText = "-";
+  individualResults.innerText = "-";
 };
 
 // BUTTONS

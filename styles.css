@@ -32,7 +32,7 @@ h2 {
 .dieWrapper div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 5px;
 }
@@ -97,16 +97,20 @@ input[type=checkbox] {
     color: #fff;
     padding-top: 11px;
     background: #888;
+    margin: 0 2px 5px;
 }
 
 .D4 {
     background: url('img/d4.svg');
     background-size: cover;
+    position: relative;
+    line-height: 1.5;
 }
 
 .D6 {
     background: url('img/d6.svg');
     background-size: cover;
+    margin: 0 0 5px;
 }
 
 .D8 {

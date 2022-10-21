@@ -100,7 +100,7 @@ const minusDice = function (sides, input) {
 };
 
 const manualInput = function (sides, input) {
-  numberOfDice[sides] = input.value;
+  numberOfDice[sides] = Number(input.value);
 };
 
 // ROLL MECHANICS

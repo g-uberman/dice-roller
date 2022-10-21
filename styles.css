@@ -1,138 +1,143 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin-top: 50px;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  /* padding: 10px; */
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
+
 
 /* FONTS */
 h2 {
-    text-align: center;
-    margin: 10px 0;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* DICE ICONS */
+.D4 {
+  background: url("img/d4.svg");
+  position: relative;
+  padding-top: 14px;
+}
+
+.D6 {
+  background: url("img/d6.svg");
+  margin: 0 0 5px;
+}
+
+.D8 {
+  background: url("img/d8.svg");
+}
+
+.D10 {
+  background: url("img/d10.svg");
+}
+
+.D100 {
+  background: url("img/d100.svg");
+}
+
+.D12 {
+  background: url("img/d12.svg");
+}
+
+.D20 {
+  background: url("img/d20.svg");
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding-top: 11px;
+  margin: 0 2px 5px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.numInput {
+  width: 50px;
+  height: 50px;
+  border: none;
+  text-align: center;
+  padding: 0;
+}
+
+.icon.D4 {
+    padding-top: 14px;
+}
+
+.numInput.D4 {
+  padding-top: 6px;
 }
 
 /* DICE WRAPPERS */
 
 .dieWrapper {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dieWrapper div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.dieForm {
-    display: flex;
-    gap: 5px;
-}
-
-.numInput {
-    width: 44px;
-    height: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .numHandler {
-    width: 20px;
-    height: 20px;
-    background: #000;
-    color: #fff;
-    border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #000;
 }
 
 /* RESULT WRAPPER */
 
 .resultWrapper {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .roll {
-    width: 80px;
-    height: 40px;
-    background: #000;
-    color: #fff;
-    border-radius: 3px;
+  width: 80px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border-radius: 3px;
 }
 
-input[type=checkbox] {
-    accent-color: #000;
+input[type="checkbox"] {
+  accent-color: #000;
 }
 
 .result {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #rollResult {
-    font-size: 2em;
-    font-weight: bold;
-}
-
-/* DICE ICONS */
-.icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    color: #fff;
-    padding-top: 11px;
-    background: #888;
-    margin: 0 2px 5px;
-}
-
-.D4 {
-    background: url('img/d4.svg');
-    background-size: cover;
-    position: relative;
-    line-height: 1.5;
-}
-
-.D6 {
-    background: url('img/d6.svg');
-    background-size: cover;
-    margin: 0 0 5px;
-}
-
-.D8 {
-    background: url('img/d8.svg');
-    background-size: cover;
-}
-
-.D10 {
-    background: url('img/d10.svg');
-    background-size: cover;
-}
-
-.D100 {
-    background: url('img/d100.svg');
-    background-size: cover;
-}
-
-.D12 {
-    background: url('img/d12.svg');
-    background-size: cover;
-}
-
-.D20 {
-    background: url('img/d20.svg');
-    background-size: cover;
+  font-size: 2em;
+  font-weight: bold;
 }

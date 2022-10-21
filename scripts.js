@@ -30,10 +30,9 @@ const generateCards = function (array) {
     const dieWrapper = document.createElement("div");
     dieWrapper.classList.add("dieWrapper");
     dieWrapper.innerHTML = `
-      <div class="icon D${array[i]}">${array[i]}</div>
       <form class="dieForm" type="get">
           <div>
-              <input id="D${array[i]}input" class="numInput" value="0"/>
+              <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon "/>
               <section>
               <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               <button id="D${array[i]}minus" class="numHandler">-</button>
@@ -106,8 +105,8 @@ const rollExploding = function (sides) {
 
 const createIcon = function (sides, currentRoll) {
   let icon = document.createElement("div");
-  icon.classList.add("icon");
   icon.classList.add(`D${sides}`);
+  icon.classList.add("icon");
   icon.innerText = currentRoll;
   individualResults.append(icon);
 };

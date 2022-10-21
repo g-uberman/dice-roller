@@ -71,12 +71,7 @@ const generateEventListeners = function (array) {
     });
     selectors[i].input.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
-        if (i < selectors.length - 1) {
-        selectors[i + 1].input.focus();
-        } else {
-          rollAll();
           selectors[i].input.blur();
-        }
         event.preventDefault();
       }
     });

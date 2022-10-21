@@ -14,7 +14,6 @@ for (let i = 0; i < 101; i++) {
 const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
 const explodingCheckbox = document.getElementById("exploding");
-
 const cardContainer = document.getElementsByClassName("container")[0];
 
 // GENERATE DICE WRAPPERS
@@ -32,7 +31,7 @@ const generateCards = function (array) {
     dieWrapper.innerHTML = `
       <form class="dieForm" type="get">
           <div>
-              <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon "/>
+              <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon" onSubmit=("rollAll()")/>
               <section>
               <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               <button id="D${array[i]}minus" class="numHandler">-</button>
@@ -66,6 +65,21 @@ const generateEventListeners = function (array) {
       minusDice(selectors[i].sides, selectors[i].input);
       e.preventDefault();
     });
+    selectors[i].input.addEventListener("change", (e) => {
+      manualInput(selectors[i].sides, selectors[i].input);
+      e.preventDefault();
+    });
+    selectors[i].input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        if (i < selectors.length - 1) {
+        selectors[i + 1].input.focus();
+        } else {
+          rollAll();
+          selectors[i].input.blur();
+        }
+        event.preventDefault();
+      }
+    });
   }
 };
 
@@ -83,6 +97,10 @@ const minusDice = function (sides, input) {
     numberOfDice[sides] -= 1;
     input.value = numberOfDice[sides];
   }
+};
+
+const manualInput = function (sides, input) {
+  numberOfDice[sides] = input.value;
 };
 
 // ROLL MECHANICS

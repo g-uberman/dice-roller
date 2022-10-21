@@ -30,7 +30,7 @@ const generateCards = function (array) {
     const dieWrapper = document.createElement("div");
     dieWrapper.classList.add("dieWrapper");
     dieWrapper.innerHTML = `
-      <h2>D${array[i]}</h2>
+      <div class="icon D${array[i]}">${array[i]}</div>
       <form class="dieForm" type="get">
           <div>
               <input id="D${array[i]}input" class="numInput" value="0"/>

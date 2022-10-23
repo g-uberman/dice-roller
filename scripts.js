@@ -31,7 +31,7 @@ const generateCards = function (array) {
     dieWrapper.innerHTML = `
       <form class="dieForm" type="get">
           <div>
-              <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon" onSubmit=("rollAll()")/>
+              <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon" onClick=(this.select()) />
               <section>
               <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               <button id="D${array[i]}minus" class="numHandler">-</button>
@@ -69,11 +69,11 @@ const generateEventListeners = function (array) {
       manualInput(selectors[i].sides, selectors[i].input);
       e.preventDefault();
     });
-    selectors[i].input.addEventListener("keypress", function(event) {
+    selectors[i].input.addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
-          selectors[i].input.blur();
+        selectors[i].input.blur();
         event.preventDefault();
-      }
+      };
     });
   }
 };

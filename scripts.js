@@ -14,7 +14,7 @@ for (let i = 0; i < 101; i++) {
 const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
 const explodingCheckbox = document.getElementById("exploding");
-const cardContainer = document.getElementsByClassName("container")[0];
+const cardContainer = document.getElementById("cardContainer");
 
 // GENERATE DICE WRAPPERS
 

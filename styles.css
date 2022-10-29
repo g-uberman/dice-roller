@@ -26,6 +26,11 @@ h2 {
   margin: 10px 0;
 }
 
+h4 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
 /* MAIN CONTAINER */
 .container {
   width: 80%;
@@ -185,4 +190,8 @@ input[type="checkbox"] {
   /* width: 200px; */
   display: flex;
   scale: 0.7;
+}
+
+.result h4:nth-of-type(2) {
+    margin-top: 30px;
 }

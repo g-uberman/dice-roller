@@ -74,7 +74,7 @@ const generateEventListeners = function (array) {
       if (event.key === "Enter") {
         selectors[i].input.blur();
         event.preventDefault();
-      };
+      }
     });
   }
 };
@@ -142,11 +142,18 @@ const rollDtype = function (sides) {
 
 // RECORD RESULTS
 
+let recordCounter = 1;
+
 const recordResults = (total) => {
   const newRecord = document.createElement("p");
-  newRecord.innerText = total;
+  newRecord.classList.add("recordRow");
+  newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons">-Dice-</span>`;
+  newRecord.getElementsByClassName("recordId")[0].innerText = recordCounter;
+  newRecord.getElementsByClassName("recordTotal")[0].innerText = total;
+  // newRecord.getElementsByClassName("recordIcons")[0].innerText = recordCounter;
   recordedResults.append(newRecord);
-}
+  recordCounter++;
+};
 
 // ROLL BUTTON EFFECT
 
@@ -172,9 +179,6 @@ const clearAll = function () {
   rollResult.innerText = "-";
   individualResults.innerText = "-";
 };
-
-
-
 
 // BUTTONS
 

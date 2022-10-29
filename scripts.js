@@ -9,6 +9,9 @@ for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
 }
 
+let iconHolder = document.createElement("div");
+iconHolder.classList.add("iconHolder");
+
 // SELECTORS
 
 const rollResult = document.getElementById("rollResult");
@@ -123,6 +126,12 @@ const createIcon = function (sides, currentRoll) {
   icon.classList.add("icon");
   icon.innerText = currentRoll;
   individualResults.append(icon);
+
+  let iconCopy = document.createElement("div");
+  iconCopy.classList.add(`D${sides}`);
+  iconCopy.classList.add("icon");
+  iconCopy.innerText = currentRoll;
+  iconHolder.append(iconCopy);
 };
 
 const rollDtype = function (sides) {
@@ -145,19 +154,21 @@ const rollDtype = function (sides) {
 let recordCounter = 1;
 
 const recordResults = (total) => {
+  const newIcons = iconHolder;
   const newRecord = document.createElement("p");
   newRecord.classList.add("recordRow");
-  newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons">-Dice-</span>`;
+  newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
   newRecord.getElementsByClassName("recordId")[0].innerText = recordCounter;
   newRecord.getElementsByClassName("recordTotal")[0].innerText = total;
-  // newRecord.getElementsByClassName("recordIcons")[0].innerText = recordCounter;
-  recordedResults.append(newRecord);
+  newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
+  recordedResults.prepend(newRecord);
   recordCounter++;
 };
 
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
+  iconHolder.innerHTML = null;
   individualResults.innerText = "";
   let rollsTotal = 0;
   for (let i = numberOfDice.length; i > 0; i--) {

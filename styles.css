@@ -5,8 +5,8 @@
 }
 
 body {
-    margin-top: 50px;
-    background: url('img/wald-abstrakt-herbst-hintergrund.jpg');
+  margin-top: 50px;
+  background: url("img/wald-abstrakt-herbst-hintergrund.jpg");
 }
 
 #cardContainer {
@@ -76,7 +76,6 @@ input[type="checkbox"] {
   margin-bottom: 20px;
 }
 
-
 /* DICE ICONS */
 .D4 {
   background: url("img/d4.svg");
@@ -130,7 +129,7 @@ input[type="checkbox"] {
 }
 
 .icon.D4 {
-    padding-top: 14px;
+  padding-top: 14px;
 }
 
 .numInput.D4 {
@@ -164,5 +163,26 @@ input[type="checkbox"] {
 /* RESULT RECORDS */
 #recordedResults span {
   display: inline-block;
+}
+
+.recordRow {
+  display: flex;
+  align-items: center;
+}
+
+.recordId {
   width: 50px;
+}
+
+.recordTotal {
+  font-weight: bold;
+  font-size: 1.3em;
+  width: 30px;
+  text-align: right;
+}
+
+.iconHolder {
+  /* width: 200px; */
+  display: flex;
+  scale: 0.7;
 }

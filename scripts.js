@@ -13,6 +13,7 @@ for (let i = 0; i < 101; i++) {
 
 const rollResult = document.getElementById("rollResult");
 const individualResults = document.getElementById("individualResults");
+const recordedResults = document.getElementById("recordedResults");
 const explodingCheckbox = document.getElementById("exploding");
 const cardContainer = document.getElementById("cardContainer");
 
@@ -139,6 +140,14 @@ const rollDtype = function (sides) {
   return typeTotal;
 };
 
+// RECORD RESULTS
+
+const recordResults = (total) => {
+  const newRecord = document.createElement("p");
+  newRecord.innerText = total;
+  recordedResults.append(newRecord);
+}
+
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
@@ -149,6 +158,8 @@ const rollAll = function () {
     rollsTotal += rollDtype(i);
   }
   rollResult.innerText = rollsTotal;
+  //record
+  recordResults(rollsTotal);
 };
 
 const clearAll = function () {
@@ -161,6 +172,9 @@ const clearAll = function () {
   rollResult.innerText = "-";
   individualResults.innerText = "-";
 };
+
+
+
 
 // BUTTONS
 

@@ -161,3 +161,8 @@ input[type="checkbox"] {
   border: 1px solid #888;
 }
 
+/* RESULT RECORDS */
+#recordedResults span {
+  display: inline-block;
+  width: 50px;
+}

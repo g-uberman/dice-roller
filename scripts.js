@@ -9,6 +9,8 @@ for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
 }
 
+let recordCounter = 1;
+
 let iconHolder = document.createElement("div");
 iconHolder.classList.add("iconHolder");
 
@@ -151,8 +153,6 @@ const rollDtype = function (sides) {
 
 // RECORD RESULTS
 
-let recordCounter = 1;
-
 const recordResults = (total) => {
   const newIcons = iconHolder;
   const newRecord = document.createElement("p");
@@ -176,7 +176,6 @@ const rollAll = function () {
     rollsTotal += rollDtype(i);
   }
   rollResult.innerText = rollsTotal;
-  //record
   recordResults(rollsTotal);
 };
 

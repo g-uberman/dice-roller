@@ -16,7 +16,7 @@ let recordTemplate = {
 diceTypes.map((sides) => {
   let key = "D" + sides;
   recordTemplate[key] = [];
-})
+});
 
 let recordCounter = 1;
 
@@ -119,26 +119,43 @@ const manualInput = function (sides, input) {
 const displayHistory = () => {
   recordedResults.innerHTML = null;
   recordHistory.map((record) => {
-
     // const newIcons = iconHolder;
 
     //create elements
     const newRecord = document.createElement("p");
     newRecord.classList.add("recordRow");
     newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
-    
+
+    //create icons
+    console.log(record);
+
+    for (const [key, value] of Object.entries(record)) {
+      if (value.length) {
+        const sides = Number(key.replace("D", ""));
+        const currentRoll = value;
+
+        createIcon(sides, currentRoll, newRecord.getElementsByClassName("recordIcons")[0]);
+        console.log(value);
+      }
+    }
+
+    // record.map((diceType) => {
+    //   if (diceType.includes("D") && ) {
+    //     const currentRoll = diceType.value;
+    //     createIcon(sides, currentRoll);
+    //   }
+    // })
+
     //paste values
     newRecord.getElementsByClassName("recordId")[0].innerText = record.id;
     newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
     // newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
-    
+
     //display all
     recordedResults.prepend(newRecord);
     // recordedResults.innerHTML = newRecord.innerHTML;
-
-  })
-}
-
+  });
+};
 
 // ROLL MECHANICS
 
@@ -158,12 +175,12 @@ const rollExploding = function (sides) {
   return dieTotal;
 };
 
-const createIcon = function (sides, currentRoll) {
+const createIcon = function (sides, currentRoll, destination) {
   let icon = document.createElement("div");
   icon.classList.add(`D${sides}`);
   icon.classList.add("icon");
   icon.innerText = currentRoll;
-  individualResults.append(icon);
+  destination.append(icon);
 };
 
 const rollDtype = function (sides) {
@@ -175,7 +192,7 @@ const rollDtype = function (sides) {
     } else {
       currentRoll = rollOnce(sides);
     }
-    createIcon(sides, currentRoll);
+    createIcon(sides, currentRoll, individualResults);
     typeTotal += currentRoll;
     recordDtype(sides, currentRoll);
   }
@@ -196,7 +213,7 @@ const recordTotal = (total) => {
   recordHistory.push(currentRecord);
   currentRecord = structuredClone(recordTemplate);
   console.log(recordHistory);
-}
+};
 
 // ROLL BUTTON EFFECT
 

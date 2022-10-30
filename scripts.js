@@ -1,7 +1,6 @@
 // STORING ARRAYS
 
 const diceTypes = [4, 6, 8, 10, 12, 20];
-
 let selectors = [];
 
 const numberOfDice = [];
@@ -19,9 +18,7 @@ diceTypes.map((sides) => {
 });
 
 let recordCounter = 1;
-
 let currentRecord = structuredClone(recordTemplate);
-
 let recordHistory = [];
 
 // SELECTORS
@@ -34,13 +31,13 @@ const cardContainer = document.getElementById("cardContainer");
 
 // GENERATE DICE WRAPPERS
 
-const generateAll = function (array) {
+const generateAll = (array) => {
   generateCards(array);
   generateSelectors(array);
   generateEventListeners(array);
 };
 
-const generateCards = function (array) {
+const generateCards = (array) => {
   for (let i = 0; i < array.length; i++) {
     const dieWrapper = document.createElement("div");
     dieWrapper.classList.add("dieWrapper");
@@ -59,7 +56,7 @@ const generateCards = function (array) {
   }
 };
 
-const generateSelectors = function (array) {
+const generateSelectors = (array) => {
   for (let i = 0; i < array.length; i++) {
     let object = {
       sides: array[i],
@@ -71,7 +68,7 @@ const generateSelectors = function (array) {
   }
 };
 
-const generateEventListeners = function (array) {
+const generateEventListeners = (array) => {
   for (let i = 0; i < array.length; i++) {
     selectors[i].plus.addEventListener("click", (e) => {
       plusDice(selectors[i].sides, selectors[i].input);
@@ -98,19 +95,19 @@ generateAll(diceTypes);
 
 // INPUT FUNCTIONS
 
-const plusDice = function (sides, input) {
+const plusDice = (sides, input) => {
   numberOfDice[sides] += 1;
   input.value = numberOfDice[sides];
 };
 
-const minusDice = function (sides, input) {
+const minusDice = (sides, input) => {
   if (numberOfDice[sides] > 0) {
     numberOfDice[sides] -= 1;
     input.value = numberOfDice[sides];
   }
 };
 
-const manualInput = function (sides, input) {
+const manualInput = (sides, input) => {
   numberOfDice[sides] = Number(input.value);
 };
 
@@ -152,12 +149,12 @@ const displayHistory = () => {
 
 // ROLL MECHANICS
 
-const rollOnce = function (sides) {
+const rollOnce = (sides) => {
   let dieCurrent = Math.ceil(Math.random() * Number(sides));
   return dieCurrent;
 };
 
-const rollExploding = function (sides) {
+const rollExploding = (sides) => {
   let dieTotal = 0;
   let dieCurrent = rollOnce(sides);
   dieTotal = dieTotal + dieCurrent;
@@ -168,7 +165,7 @@ const rollExploding = function (sides) {
   return dieTotal;
 };
 
-const createIcon = function (sides, currentRoll, destination) {
+const createIcon = (sides, currentRoll, destination) => {
   let icon = document.createElement("div");
   icon.classList.add(`D${sides}`);
   icon.classList.add("icon");
@@ -176,7 +173,7 @@ const createIcon = function (sides, currentRoll, destination) {
   destination.prepend(icon);
 };
 
-const rollDtype = function (sides) {
+const rollDtype = (sides) => {
   let typeTotal = 0;
   let currentRoll = 0;
   for (let i = 0; i < numberOfDice[sides]; i++) {
@@ -195,8 +192,7 @@ const rollDtype = function (sides) {
 // RECORD RESULTS
 
 const recordDtype = (sides, currentRoll) => {
-  let key = "D" + sides;
-  currentRecord[key].push(currentRoll);
+  currentRecord["D" + sides].push(currentRoll);
 };
 
 const recordTotal = (total) => {
@@ -209,7 +205,7 @@ const recordTotal = (total) => {
 
 // ROLL BUTTON EFFECT
 
-const rollAll = function () {
+const rollAll = () => {
   individualResults.innerText = "";
   let rollsTotal = 0;
   for (let i = 0; i < numberOfDice.length; i++) {
@@ -220,7 +216,7 @@ const rollAll = function () {
   displayHistory();
 };
 
-const clearAll = function () {
+const clearAll = () => {
   for (let i = 0; i < diceTypes.length; i++) {
     selectors[i].input.value = 0;
   }

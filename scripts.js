@@ -9,18 +9,19 @@ for (let i = 0; i < 101; i++) {
   numberOfDice.push(0);
 }
 
-let recordCounter = 1;
-let currentRecordTemplate = {
+let recordTemplate = {
   id: 0,
   total: 0,
-  D4: [],
-  D6: [],
-  D8: [],
-  D10: [],
-  D12: [],
-  D20: [],
 };
-let currentRecord = structuredClone(currentRecordTemplate);
+diceTypes.map((sides) => {
+  let key = "D" + sides;
+  recordTemplate[key] = [];
+})
+
+let recordCounter = 1;
+
+let currentRecord = structuredClone(recordTemplate);
+
 let recordHistory = [];
 
 // SELECTORS
@@ -192,7 +193,7 @@ const recordTotal = (total) => {
 
 const addToHistory = () => {
   recordHistory.push(currentRecord);
-  currentRecord = structuredClone(currentRecordTemplate);
+  currentRecord = structuredClone(recordTemplate);
   console.log(recordHistory);
 
 }

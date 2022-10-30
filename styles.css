@@ -56,8 +56,8 @@ h4 {
 }
 
 .clear {
-  width: 56px;
-  height: 28px;
+  width: 60px;
+  height: 30px;
   background: #fff;
   border: 1px solid #888;
   border-radius: 3px;
@@ -146,10 +146,6 @@ input[type="checkbox"] {
   padding-top: 6px;
 }
 
-#individualResults div {
-  margin: 0;
-}
-
 /* DICE WRAPPERS */
 
 .dieWrapper {
@@ -213,17 +209,14 @@ td {
 
 .recordIcons {
   text-align: left;
-
-  /* horizontal-align: left; */
 }
 
 .recordIcons div {
-  /* scale: 0.7; */
   text-align: center;
   height: 30px;
   width: 30px;
   line-height: 0.6em;
-  margin: 0px;
+  margin-bottom: 0;
 }
 
 .result h4:nth-of-type(2) {

@@ -132,9 +132,12 @@ const displayHistory = () => {
     for (const [key, value] of Object.entries(record)) {
       if (value.length) {
         const sides = Number(key.replace("D", ""));
-        const currentRoll = value;
+        value.map((currentRoll) => {
 
-        createIcon(sides, currentRoll, newRecord.getElementsByClassName("recordIcons")[0]);
+          createIcon(sides, currentRoll, newRecord.getElementsByClassName("recordIcons")[0]);
+        })
+        // const currentRoll = value;
+        
         console.log(value);
       }
     }

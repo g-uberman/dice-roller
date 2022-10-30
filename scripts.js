@@ -124,7 +124,7 @@ const displayHistory = () => {
     newRecord.classList.add("recordRow");
     newRecord.innerHTML = `<td class="recordId">ID</td><td class="recordTotal">Total</td><td class="recordIcons"></td>`;
     //paste values
-    newRecord.getElementsByClassName("recordId")[0].innerText = record.id + '.';
+    newRecord.getElementsByClassName("recordId")[0].innerText = record.id + ".";
     newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
     //create icons
     for (const [key, value] of Object.entries(record)) {
@@ -143,7 +143,9 @@ const displayHistory = () => {
     recordedResults.prepend(newRecord);
     //delete old results
     if (recordedResults.getElementsByTagName("tr").length > 10) {
-      recordedResults.getElementsByTagName("tr")[(recordedResults.getElementsByTagName("tr").length - 1)].remove();
+      recordedResults
+        .getElementsByTagName("tr")
+        [recordedResults.getElementsByTagName("tr").length - 1].remove();
     }
   });
 };
@@ -171,7 +173,7 @@ const createIcon = function (sides, currentRoll, destination) {
   icon.classList.add(`D${sides}`);
   icon.classList.add("icon");
   icon.innerText = currentRoll;
-  destination.append(icon);
+  destination.prepend(icon);
 };
 
 const rollDtype = function (sides) {
@@ -210,8 +212,8 @@ const recordTotal = (total) => {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  for (let i = numberOfDice.length; i > 0; i--) {
-    //for ( let i = 0; i < numberOfDice.length; i++ ) {       <- normal direction
+  // for (let i = numberOfDice.length; i > 0; i--) {
+  for (let i = 0; i < numberOfDice.length; i++) {
     rollsTotal += rollDtype(i);
   }
   rollResult.innerText = rollsTotal;

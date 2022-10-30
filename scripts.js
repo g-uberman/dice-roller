@@ -119,44 +119,24 @@ const manualInput = function (sides, input) {
 const displayHistory = () => {
   recordedResults.innerHTML = null;
   recordHistory.map((record) => {
-    // const newIcons = iconHolder;
-
     //create elements
     const newRecord = document.createElement("p");
     newRecord.classList.add("recordRow");
     newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
-
+    //paste values
+    newRecord.getElementsByClassName("recordId")[0].innerText = record.id;
+    newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
     //create icons
-    console.log(record);
-
     for (const [key, value] of Object.entries(record)) {
       if (value.length) {
         const sides = Number(key.replace("D", ""));
         value.map((currentRoll) => {
-
           createIcon(sides, currentRoll, newRecord.getElementsByClassName("recordIcons")[0]);
         })
-        // const currentRoll = value;
-        
-        console.log(value);
       }
     }
-
-    // record.map((diceType) => {
-    //   if (diceType.includes("D") && ) {
-    //     const currentRoll = diceType.value;
-    //     createIcon(sides, currentRoll);
-    //   }
-    // })
-
-    //paste values
-    newRecord.getElementsByClassName("recordId")[0].innerText = record.id;
-    newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
-    // newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
-
     //display all
     recordedResults.prepend(newRecord);
-    // recordedResults.innerHTML = newRecord.innerHTML;
   });
 };
 

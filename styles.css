@@ -186,9 +186,7 @@ input[type="checkbox"] {
   text-align: right;
 }
 
-.iconHolder {
-  /* width: 200px; */
-  display: flex;
+.recordIcons {
   scale: 0.7;
 }
 

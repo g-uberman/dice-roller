@@ -177,9 +177,14 @@ input[type="checkbox"] {
 
 table, tr {
   border: 1px solid #00000055;
+  border-top: none;
   border-left: none;
   border-right: none;
   border-collapse: collapse;
+}
+
+table, tr:last-child {
+  border-bottom: none;
 }
 
 td {

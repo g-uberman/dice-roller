@@ -10,9 +10,18 @@ for (let i = 0; i < 101; i++) {
 }
 
 let recordCounter = 1;
-
-let iconHolder = document.createElement("div");
-iconHolder.classList.add("iconHolder");
+let currentRecordTemplate = {
+  id: 0,
+  total: 0,
+  D4: [],
+  D6: [],
+  D8: [],
+  D10: [],
+  D12: [],
+  D20: [],
+};
+let currentRecord = structuredClone(currentRecordTemplate);
+let recordHistory = [];
 
 // SELECTORS
 
@@ -129,11 +138,11 @@ const createIcon = function (sides, currentRoll) {
   icon.innerText = currentRoll;
   individualResults.append(icon);
 
-  let iconCopy = document.createElement("div");
-  iconCopy.classList.add(`D${sides}`);
-  iconCopy.classList.add("icon");
-  iconCopy.innerText = currentRoll;
-  iconHolder.append(iconCopy);
+  // let iconCopy = document.createElement("div");
+  // iconCopy.classList.add(`D${sides}`);
+  // iconCopy.classList.add("icon");
+  // iconCopy.innerText = currentRoll;
+  // iconHolder.append(iconCopy);
 };
 
 const rollDtype = function (sides) {
@@ -147,6 +156,7 @@ const rollDtype = function (sides) {
     }
     createIcon(sides, currentRoll);
     typeTotal += currentRoll;
+    recordDtype(sides, currentRoll);
   }
   return typeTotal;
 };
@@ -154,21 +164,42 @@ const rollDtype = function (sides) {
 // RECORD RESULTS
 
 const recordResults = (total) => {
-  const newIcons = iconHolder;
-  const newRecord = document.createElement("p");
-  newRecord.classList.add("recordRow");
-  newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
-  newRecord.getElementsByClassName("recordId")[0].innerText = recordCounter;
-  newRecord.getElementsByClassName("recordTotal")[0].innerText = total;
-  newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
-  recordedResults.prepend(newRecord);
-  recordCounter++;
+  // const newIcons = iconHolder;
+  // const newRecord = document.createElement("p");
+  // newRecord.classList.add("recordRow");
+  // newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
+  // newRecord.getElementsByClassName("recordId")[0].innerText = recordCounter;
+  // newRecord.getElementsByClassName("recordTotal")[0].innerText = total;
+  // newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
+  // recordedResults.prepend(newRecord);
+  // recordCounter++;
 };
+
+const recordDtype = (sides, currentRoll) => {
+  let key = "D" + sides;
+  // let currentRecord = {};
+  // currentRecord[key] = [];
+  currentRecord[key].push(currentRoll);
+  // console.log(currentRecord);
+};
+
+const recordTotal = (total) => {
+  currentRecord.id = recordCounter;
+  currentRecord.total = total;
+  recordCounter++;
+  // console.log(currentRecord);
+}
+
+const addToHistory = () => {
+  recordHistory.push(currentRecord);
+  currentRecord = structuredClone(currentRecordTemplate);
+  console.log(recordHistory);
+
+}
 
 // ROLL BUTTON EFFECT
 
 const rollAll = function () {
-  iconHolder.innerHTML = null;
   individualResults.innerText = "";
   let rollsTotal = 0;
   for (let i = numberOfDice.length; i > 0; i--) {
@@ -176,7 +207,8 @@ const rollAll = function () {
     rollsTotal += rollDtype(i);
   }
   rollResult.innerText = rollsTotal;
-  recordResults(rollsTotal);
+  recordTotal(rollsTotal);
+  addToHistory();
 };
 
 const clearAll = function () {

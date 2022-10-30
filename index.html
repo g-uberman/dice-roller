@@ -10,29 +10,34 @@
     <title>Dice Roller</title>
   </head>
   <body>
-      <div class="container">
-        <div id="cardContainer"></div>
-        <div>
-          <label for="exploding">Exploding dice:</label>
-          <input type="checkbox" id="exploding" />
-        </div>
-        <button id="roll" class="roll">ROLL!</button>
-        <button id="clear" class="clear">Clear</button>
-        <div class="result">
-          <h4>Roll result:</h4>
-          <div id="rollResult">
-            <!-- TOTAL ROLL RESULT GOES HERE -->
-            -
-          </div>
-          <div id="individualResults">
-            <!-- INDIVIDUAL DICE ROLL RESULTS GOES HERE -->
-            -
-          </div>
-          <h4>Roll history:</h4>
-          <div id="recordedResults">
-            <!-- RECORDED RESULTS GO HERE -->
-          </div>
-        </div>
+    <div class="container">
+      <div id="cardContainer"></div>
+      <div>
+        <label for="exploding">Exploding dice:</label>
+        <input type="checkbox" id="exploding" />
       </div>
+      <button id="roll" class="roll">ROLL!</button>
+      <button id="clear" class="clear">Clear</button>
+      <div class="result">
+        <h4>Roll result:</h4>
+        <div id="rollResult">
+          <!-- TOTAL ROLL RESULT GOES HERE -->
+          -
+        </div>
+        <div id="individualResults">
+          <!-- INDIVIDUAL DICE ROLL RESULTS GOES HERE -->
+          -
+        </div>
+        <h4>Roll history:</h4>
+        <table id="recordedResults">
+          <!-- <tr>
+            <th>ID:</th>
+            <th>Total:</th>
+            <th>Dice:</th>
+          </tr> -->
+          <!-- RECORDED RESULTS GO HERE -->
+        </table>
+      </div>
+    </div>
   </body>
 </html>

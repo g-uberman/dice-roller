@@ -120,19 +120,23 @@ const displayHistory = () => {
   recordedResults.innerHTML = null;
   recordHistory.map((record) => {
     //create elements
-    const newRecord = document.createElement("p");
+    const newRecord = document.createElement("tr");
     newRecord.classList.add("recordRow");
-    newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
+    newRecord.innerHTML = `<td class="recordId">ID</td><td class="recordTotal">Total</td><td class="recordIcons"></td>`;
     //paste values
-    newRecord.getElementsByClassName("recordId")[0].innerText = record.id;
+    newRecord.getElementsByClassName("recordId")[0].innerText = record.id + '.';
     newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
     //create icons
     for (const [key, value] of Object.entries(record)) {
       if (value.length) {
         const sides = Number(key.replace("D", ""));
         value.map((currentRoll) => {
-          createIcon(sides, currentRoll, newRecord.getElementsByClassName("recordIcons")[0]);
-        })
+          createIcon(
+            sides,
+            currentRoll,
+            newRecord.getElementsByClassName("recordIcons")[0]
+          );
+        });
       }
     }
     //display all

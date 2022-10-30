@@ -212,7 +212,6 @@ const recordTotal = (total) => {
 const rollAll = function () {
   individualResults.innerText = "";
   let rollsTotal = 0;
-  // for (let i = numberOfDice.length; i > 0; i--) {
   for (let i = 0; i < numberOfDice.length; i++) {
     rollsTotal += rollDtype(i);
   }

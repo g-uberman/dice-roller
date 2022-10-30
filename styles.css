@@ -120,7 +120,7 @@ input[type="checkbox"] {
   color: #fff;
   padding-top: 11px;
   margin: 0 2px 5px;
-  background-size: 40px 40px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -139,6 +139,10 @@ input[type="checkbox"] {
 
 .numInput.D4 {
   padding-top: 6px;
+}
+
+#individualResults div {
+  margin: 0;
 }
 
 /* DICE WRAPPERS */
@@ -166,30 +170,53 @@ input[type="checkbox"] {
 }
 
 /* RESULT RECORDS */
-#recordedResults span {
-  display: inline-block;
+#recordedResults {
+  width: 300px;
+  margin: 0 auto;
 }
 
-.recordRow {
-  display: flex;
-  align-items: center;
+table, tr {
+  border: 1px solid #00000055;
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 3px;
 }
 
 .recordId {
   width: 50px;
+  padding-right: 20px;
+  text-align: right;
+  font-size: 0.8em;
 }
 
 .recordTotal {
+  width: 70px;
+  padding-right: 30px;
   font-weight: bold;
   font-size: 1.3em;
-  width: 30px;
   text-align: right;
 }
 
 .recordIcons {
-  scale: 0.7;
+  text-align: left;
+
+  /* horizontal-align: left; */
+}
+
+.recordIcons div {
+  /* scale: 0.7; */
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  line-height: 0.6em;
+  margin: 0px;
 }
 
 .result h4:nth-of-type(2) {
-    margin-top: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }

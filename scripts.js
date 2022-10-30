@@ -114,6 +114,32 @@ const manualInput = function (sides, input) {
   numberOfDice[sides] = Number(input.value);
 };
 
+// DISPLAY HISTORY
+
+const displayHistory = () => {
+  recordedResults.innerHTML = null;
+  recordHistory.map((record) => {
+
+    // const newIcons = iconHolder;
+
+    //create elements
+    const newRecord = document.createElement("p");
+    newRecord.classList.add("recordRow");
+    newRecord.innerHTML = `<span class="recordId">ID</span><span class="recordTotal">Total</span><span class="recordIcons"></span>`;
+    
+    //paste values
+    newRecord.getElementsByClassName("recordId")[0].innerText = record.id;
+    newRecord.getElementsByClassName("recordTotal")[0].innerText = record.total;
+    // newRecord.getElementsByClassName("recordIcons")[0].append(newIcons);
+    
+    //display all
+    recordedResults.prepend(newRecord);
+    // recordedResults.innerHTML = newRecord.innerHTML;
+
+  })
+}
+
+
 // ROLL MECHANICS
 
 const rollOnce = function (sides) {
@@ -183,6 +209,7 @@ const rollAll = function () {
   }
   rollResult.innerText = rollsTotal;
   recordTotal(rollsTotal);
+  displayHistory();
 };
 
 const clearAll = function () {

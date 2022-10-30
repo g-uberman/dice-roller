@@ -228,7 +228,7 @@ const clearAll = function () {
     numberOfDice[i] = 0;
   }
   rollResult.innerText = "-";
-  individualResults.innerText = "-";
+  individualResults.innerText = "";
 };
 
 // BUTTONS

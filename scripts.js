@@ -19,7 +19,7 @@ diceTypes.map((sides) => {
 
 let recordCounter = 1;
 let currentRecord = structuredClone(recordTemplate);
-let recordHistory = [];
+recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
 
 // SELECTORS
 
@@ -114,7 +114,9 @@ const manualInput = (sides, input) => {
 // DISPLAY HISTORY
 
 const displayHistory = () => {
+  //clear old
   recordedResults.innerHTML = null;
+  //                    recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
   recordHistory.map((record) => {
     //create elements
     const newRecord = document.createElement("tr");
@@ -200,6 +202,9 @@ const recordTotal = (total) => {
   currentRecord.total = total;
   recordCounter++;
   recordHistory.push(currentRecord);
+  // push record to localStorage
+  localStorage.setItem('rollHistory', JSON.stringify(recordHistory));
+  // reset currentRecord 
   currentRecord = structuredClone(recordTemplate);
 };
 

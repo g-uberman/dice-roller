@@ -241,3 +241,8 @@ roll.addEventListener("click", () => {
 clear.addEventListener("click", () => {
   clearAll();
 });
+
+
+// INITIAL HISTORY DISPLAY
+
+displayHistory();

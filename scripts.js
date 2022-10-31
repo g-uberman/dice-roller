@@ -28,7 +28,6 @@ recordHistory = [];
 recordCounter = 1;
 };
 
-
 // SELECTORS
 
 const rollResult = document.getElementById("rollResult");
@@ -124,7 +123,6 @@ const manualInput = (sides, input) => {
 const displayHistory = () => {
   //clear old
   recordedResults.innerHTML = null;
-  //                    recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
   recordHistory.map((record) => {
     //create elements
     const newRecord = document.createElement("tr");

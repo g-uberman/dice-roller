@@ -19,7 +19,12 @@ diceTypes.map((sides) => {
 
 let recordCounter = 1;
 let currentRecord = structuredClone(recordTemplate);
+
+if (localStorage.getItem('rollHistory')) {
 recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
+} else {
+recordHistory = []
+};
 
 // SELECTORS
 

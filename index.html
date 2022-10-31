@@ -11,14 +11,14 @@
   </head>
   <body>
     <div class="container">
-      <div id="cardContainer"></div>
-      <div>
+      <section>
+        <div id="cardContainer"></div>
         <label for="exploding">Kości premiowe:</label>
         <input type="checkbox" id="exploding" checked />
-      </div>
+      </section>
       <button id="roll" class="roll">Rzucaj!</button>
       <button id="clear" class="clear">Wyczyść</button>
-      <div class="result">
+      <section class="result">
         <h4>Wynik rzutu:</h4>
         <div id="rollResult">
           <!-- TOTAL ROLL RESULT GOES HERE -->
@@ -27,6 +27,8 @@
         <div id="individualResults">
           <!-- INDIVIDUAL DICE ROLL RESULTS GOES HERE -->
         </div>
+      </section>
+      <section>
         <h4>Historia rzutów:</h4>
         <div id="tableContainer">
           <table id="recordedResults">
@@ -34,7 +36,7 @@
           </table>
         </div>
         <button id="clearHistory" class="clear">Wyczyść historię</button>
-      </div>
+      </section>
     </div>
   </body>
 </html>

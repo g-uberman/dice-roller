@@ -251,6 +251,8 @@ clear.addEventListener("click", () => {
 
 clearHistory.addEventListener("click", () => {
   localStorage.clear();
+  recordHistory = [];
+  recordCounter = 1;
   recordedResults.innerHTML = null;
 });
 

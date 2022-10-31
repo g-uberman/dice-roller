@@ -22,9 +22,12 @@ let currentRecord = structuredClone(recordTemplate);
 
 if (localStorage.getItem('rollHistory')) {
 recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
+recordCounter = Math.max(...recordHistory.map((record) => {return record.id})) + 1;
 } else {
-recordHistory = []
+recordHistory = [];
+recordCounter = 1;
 };
+
 
 // SELECTORS
 

@@ -147,10 +147,8 @@ const displayHistory = () => {
     //display all
     recordedResults.prepend(newRecord);
     //delete old results
-    if (recordedResults.getElementsByTagName("tr").length > 10) {
-      recordedResults
-        .getElementsByTagName("tr")
-        [recordedResults.getElementsByTagName("tr").length - 1].remove();
+    if (recordHistory.length > 10) {
+      recordHistory.shift();
     }
   });
 };

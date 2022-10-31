@@ -35,6 +35,9 @@ const individualResults = document.getElementById("individualResults");
 const recordedResults = document.getElementById("recordedResults");
 const explodingCheckbox = document.getElementById("exploding");
 const cardContainer = document.getElementById("cardContainer");
+const roll = document.getElementById("roll");
+const clear = document.getElementById("clear");
+const clearHistory = document.getElementById("clearHistory");
 
 // GENERATE DICE WRAPPERS
 
@@ -246,6 +249,10 @@ clear.addEventListener("click", () => {
   clearAll();
 });
 
+clearHistory.addEventListener("click", () => {
+  localStorage.clear();
+  recordedResults.innerHTML = null;
+});
 
 // INITIAL HISTORY DISPLAY
 

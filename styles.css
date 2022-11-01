@@ -24,7 +24,6 @@ button {
 * {
   font-family: 'Gentium Book Basic', serif;
   color: #1d1d1a;
-  font-stretch: ultra-expanded;
 }
 
 h2 {
@@ -107,6 +106,7 @@ h4 {
 }
 
 input[type="checkbox"] {
+  /* filter: sepia(100%) brightness(80%) hue-rotate(170deg) saturate(70%) contrast(300%); */
   accent-color: #1d1d1a;
   cursor: pointer;
 }
@@ -125,6 +125,7 @@ input[type="checkbox"] {
   min-height: 55px;
   font-size: 1.2em;
   line-height: 0.6em;
+  display: flex;
 }
 
 #exploding {
@@ -134,13 +135,10 @@ input[type="checkbox"] {
 /* DICE ICONS */
 .D4 {
   background: url("img/dice/d4.svg");
-  position: relative;
-  padding-top: 14px;
 }
 
 .D6 {
   background: url("img/dice/d6.svg");
-  margin: 0 0 5px;
 }
 
 .D8 {
@@ -185,13 +183,22 @@ input[type="checkbox"] {
   padding: 0;
 }
 
-.icon.D4 {
-  padding-top: 14px;
-}
-
-.numInput.D4 {
+#cardContainer .D4 {
   padding-top: 6px;
 }
+
+#individualResults .D4 {
+  line-height: 1em;
+  /* padding: 0; */
+  /* padding-top: 6px; */
+}
+
+#recordedResults .D4 {
+line-height: 0em;
+  /* padding-top: 6px; */
+}
+
+
 
 /* DICE WRAPPERS */
 

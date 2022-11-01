@@ -38,13 +38,13 @@ h4 {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  padding: 30px 30px 50px;
+  padding: 30px 30px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: #fff;
+  background: rgba(244, 239, 231, 0.9);
   border-radius: 10px;
 }
 
@@ -248,4 +248,16 @@ td {
 .history h4:nth-of-type(1) {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/* CREDITS */
+
+#credits {
+  font-size: 0.7em;
+  margin-top: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }

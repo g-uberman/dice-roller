@@ -10,7 +10,7 @@ input:focus {
 }
 
 body {
-  background: url("img/image-from-rawpixel-id-3370230-original.jpeg");
+  background: url("img/bg-forest.jpeg");
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -55,7 +55,7 @@ h4 {
 .borderContainer {
   width: 90%;
   max-width: 600px;
-  background: #e0e0db;
+  background: #e0e0dbee;
   margin: 0 auto;
   padding: 10px;
   margin-top: 10px;

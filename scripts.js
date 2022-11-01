@@ -235,7 +235,7 @@ const clearAll = () => {
   for (let i = 0; i < numberOfDice.length; i++) {
     numberOfDice[i] = 0;
   }
-  rollResult.innerText = "-";
+  rollResult.innerText = "";
   individualResults.innerText = "";
 };
 

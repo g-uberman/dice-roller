@@ -17,12 +17,18 @@ button {
 
 /* FONTS */
 * {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Gentium Book Basic', serif;
+  color: #1d1d1a;
+  font-stretch: ultra-expanded;
 }
 
 h2 {
   text-align: center;
   margin: 10px 0;
+}
+
+h3 {
+  font-family: 'Great Vibes', cursive;
 }
 
 h4 {
@@ -33,23 +39,37 @@ h4 {
   font-size: 1.2em;
 }
 
+.numHandler {
+  font-size: 1.5em;
+  line-height: 0;
+  font-weight: 400;
+}
+
 /* MAIN CONTAINER */
-.container {
+
+.borderContainer {
   width: 90%;
   max-width: 600px;
+  background: #f3f4ef;
   margin: 0 auto;
+  padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.container {
+  margin: 0 auto;
   text-align: center;
-  padding: 30px 30px 15px;
+  padding: 10px 20px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: rgba(244, 239, 231, 0.9);
-  border-radius: 10px;
+  background: #f3f4ef;
+  border: 1px solid #1d1d1a50;
 }
+
 
 #cardContainer {
   max-width: 60vw;
@@ -62,19 +82,18 @@ h4 {
 .roll {
   width: 80px;
   height: 40px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
+  background: #1d1d1a;
+  border: 1px solid #f3f4ef80;
+  outline: 3px solid #1d1d1a;
+  color: #f3f4ef;
   text-transform: uppercase;
-  font-weight: 700;
+  font-size: 1.2em;
 }
 
 .clear {
   height: 30px;
-  background: #fff;
-  border: 1px solid #888;
-  border-radius: 3px;
+  background: #f3f4ef;
+  border: 1px solid #1d1d1a50;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -84,7 +103,7 @@ h4 {
 }
 
 input[type="checkbox"] {
-  accent-color: #000;
+  accent-color: #1d1d1a;
   cursor: pointer;
 }
 
@@ -93,7 +112,7 @@ input[type="checkbox"] {
 }
 
 #rollResult {
-  height: 1.2em;
+  height: 1em;
   font-size: 3em;
   font-weight: bold;
 }
@@ -110,46 +129,48 @@ input[type="checkbox"] {
 
 /* DICE ICONS */
 .D4 {
-  background: url("img/d4.svg");
+  background: url("img/dice/d4.svg");
   position: relative;
   padding-top: 14px;
 }
 
 .D6 {
-  background: url("img/d6.svg");
+  background: url("img/dice/d6.svg");
   margin: 0 0 5px;
 }
 
 .D8 {
-  background: url("img/d8.svg");
+  background: url("img/dice/d8.svg");
 }
 
 .D10 {
-  background: url("img/d10.svg");
+  background: url("img/dice/d10.svg");
 }
 
 .D100 {
-  background: url("img/d100.svg");
+  background: url("img/dice/d100.svg");
 }
 
 .D12 {
-  background: url("img/d12.svg");
+  background: url("img/dice/d12.svg");
 }
 
 .D20 {
-  background: url("img/d20.svg");
+  background: url("img/dice/d20.svg");
 }
 
 .icon {
   display: inline-block;
   width: 50px;
   height: 50px;
-  color: #fff;
   padding-top: 1em;
-  margin: 0 2px 5px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.dieForm .icon {
+    margin-bottom: 3px;
 }
 
 .numInput {
@@ -187,9 +208,8 @@ input[type="checkbox"] {
 .numHandler {
   width: 24px;
   height: 24px;
-  background: #fff;
-  border-radius: 3px;
-  border: 1px solid #888;
+  background: #f3f4ef;
+  border: 1px solid #1d1d1a50
 }
 
 /* RESULT RECORDS */
@@ -205,7 +225,7 @@ input[type="checkbox"] {
 
 table,
 tr {
-  border: 1px solid #00000055;
+  border: 1px solid #1d1d1a50;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -250,17 +270,33 @@ td {
 
 .history h4:nth-of-type(1) {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* CREDITS */
 
 #credits {
-  font-size: 0.7em;
+  font-size: 0.8em;
   margin-top: 20px;
 }
 
 a {
-  color: inherit;
+  color: #1d1d1a50;
   text-decoration: inherit;
+}
+
+/* LOGO */
+
+#header {
+  /* display: flex;
+  align-items: flex-end; */
+}
+
+img {
+  height: 70px;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 0.7em;
 }

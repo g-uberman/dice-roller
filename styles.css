@@ -21,6 +21,10 @@ button {
 }
 
 /* FONTS */
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 h2 {
   text-align: center;
   margin: 10px 0;
@@ -28,6 +32,10 @@ h2 {
 
 h4 {
   font-weight: normal;
+}
+
+#cardContainer input {
+  font-size: 1.2em;
 }
 
 /* MAIN CONTAINER */
@@ -83,6 +91,7 @@ input[type="checkbox"] {
 
 #individualResults {
   height: 50px;
+  line-height: 1em;
 }
 
 #exploding {
@@ -225,7 +234,8 @@ td {
   text-align: center;
   height: 30px;
   width: 30px;
-  line-height: 0;
+  line-height: 0em;
+  font-size: 0.95em;
   margin-bottom: 0;
 }
 

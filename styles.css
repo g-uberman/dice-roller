@@ -46,7 +46,7 @@ h4 {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  padding: 30px 30px 60px;
+  padding: 30px 30px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,6 +63,8 @@ h4 {
   color: #fff;
   border: none;
   border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .clear {
@@ -72,6 +74,10 @@ h4 {
   border-radius: 3px;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#clearHistory {
+  margin-top: 10px;
 }
 
 input[type="checkbox"] {
@@ -90,7 +96,7 @@ input[type="checkbox"] {
 }
 
 #individualResults {
-  height: 50px;
+  min-height: 55px;
   line-height: 1em;
 }
 
@@ -190,7 +196,7 @@ input[type="checkbox"] {
 }
 
 #tableContainer {
-  height: 385px;
+  min-height: 320px;
 }
 
 table,
@@ -232,14 +238,14 @@ td {
 
 .recordIcons div {
   text-align: center;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   line-height: 0em;
-  font-size: 0.95em;
+  font-size: 0.85em;
   margin-bottom: 0;
 }
 
 .history h4:nth-of-type(1) {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }

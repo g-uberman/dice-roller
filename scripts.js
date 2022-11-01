@@ -223,9 +223,11 @@ const rollAll = () => {
   for (let i = 0; i < numberOfDice.length; i++) {
     rollsTotal += rollDtype(i);
   }
+  if (rollsTotal) {
   rollResult.innerText = rollsTotal;
   recordTotal(rollsTotal);
   displayHistory();
+  }
 };
 
 const clearAll = () => {

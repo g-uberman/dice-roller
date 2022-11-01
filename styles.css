@@ -308,6 +308,22 @@ h3 {
   line-height: 0.7em;
 }
 
+/* SELECTIONS */
+
+::-moz-selection { /* Code for Firefox */
+  color: none;
+  background: #ffffff80;
+}
+
+::selection {
+  color: none;
+  background: #ffffff80;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* CHECKBOX */
 
 .checkcontainer {

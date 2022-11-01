@@ -133,34 +133,34 @@ input[type="checkbox"] {
 
 /* DICE ICONS */
 .D4 {
-  background: url("img/dice/d4.png");
+  background: url("img/dice/d4.svg");
   position: relative;
   padding-top: 14px;
 }
 
 .D6 {
-  background: url("img/dice/d6.png");
+  background: url("img/dice/d6.svg");
   margin: 0 0 5px;
 }
 
 .D8 {
-  background: url("img/dice/d8.png");
+  background: url("img/dice/d8.svg");
 }
 
 .D10 {
-  background: url("img/dice/d10.png");
+  background: url("img/dice/d10.svg");
 }
 
 .D100 {
-  background: url("img/dice/d100.png");
+  background: url("img/dice/d100.svg");
 }
 
 .D12 {
-  background: url("img/dice/d12.png");
+  background: url("img/dice/d12.svg");
 }
 
 .D20 {
-  background: url("img/dice/d20.png");
+  background: url("img/dice/d20.svg");
 }
 
 .icon {

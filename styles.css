@@ -8,14 +8,6 @@ body {
   background: url("img/wald-abstrakt-herbst-hintergrund.jpg");
 }
 
-#cardContainer {
-  max-width: 60vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
 button {
   cursor: pointer;
 }
@@ -54,6 +46,14 @@ h4 {
   gap: 10px;
   background: #fff;
   border-radius: 10px;
+}
+
+#cardContainer {
+  max-width: 60vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .roll {
@@ -97,7 +97,8 @@ input[type="checkbox"] {
 
 #individualResults {
   min-height: 55px;
-  line-height: 1em;
+  font-size: 1.2em;
+  line-height: 0.6em;
 }
 
 #exploding {
@@ -218,17 +219,16 @@ td {
 }
 
 .recordId {
-  width: 50px;
-  padding-right: 20px;
+  width: 40px;
   text-align: right;
   font-size: 0.8em;
 }
 
 .recordTotal {
   width: 70px;
-  padding-right: 30px;
+  padding-right: 20px;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-align: right;
 }
 

@@ -5,7 +5,10 @@
 }
 
 body {
-  background: url("img/wald-abstrakt-herbst-hintergrund.jpg");
+  background: url("img/image-from-rawpixel-id-3370230-original.jpeg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 button {

@@ -53,6 +53,7 @@ h4 {
   height: 40px;
   background: #000;
   color: #fff;
+  border: none;
   border-radius: 3px;
 }
 
@@ -76,7 +77,7 @@ input[type="checkbox"] {
 
 #rollResult {
   height: 1.2em;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -122,10 +123,10 @@ input[type="checkbox"] {
 
 .icon {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   color: #fff;
-  padding-top: 11px;
+  padding-top: 1em;
   margin: 0 2px 5px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -224,7 +225,7 @@ td {
   text-align: center;
   height: 30px;
   width: 30px;
-  line-height: 0.6em;
+  line-height: 0;
   margin-bottom: 0;
 }
 

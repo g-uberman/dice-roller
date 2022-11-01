@@ -9,8 +9,10 @@ body {
 }
 
 #cardContainer {
+  max-width: 60vw;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 
@@ -30,14 +32,13 @@ h4 {
 
 /* MAIN CONTAINER */
 .container {
-  width: 80%;
-  /* min-height: calc(100vh - 60px); */
+  width: 90%;
   max-width: 600px;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  padding: 30px 60px 60px;
+  padding: 30px 30px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,6 @@ h4 {
 }
 
 .clear {
-  /* width: 60px; */
   height: 30px;
   background: #fff;
   border: 1px solid #888;
@@ -174,7 +174,8 @@ input[type="checkbox"] {
 
 /* RESULT RECORDS */
 #recordedResults {
-  width: 300px;
+  width: calc(90vw - 60px);
+  max-width: 300px;
   margin: 0 auto;
 }
 
@@ -182,7 +183,8 @@ input[type="checkbox"] {
   height: 385px;
 }
 
-table, tr {
+table,
+tr {
   border: 1px solid #00000055;
   border-top: none;
   border-left: none;
@@ -190,7 +192,8 @@ table, tr {
   border-collapse: collapse;
 }
 
-table, tr:last-child {
+table,
+tr:last-child {
   border-bottom: none;
 }
 
@@ -225,7 +228,7 @@ td {
   margin-bottom: 0;
 }
 
-.result h4:nth-of-type(2) {
+.history h4:nth-of-type(1) {
   margin-top: 30px;
   margin-bottom: 10px;
 }

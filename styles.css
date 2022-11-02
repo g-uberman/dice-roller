@@ -11,7 +11,7 @@ input:focus {
 
 body {
   background: url("img/bg-forest.jpeg");
-  background-size: 100vw 100vh;
+  background-size:  100vw calc(100vh + 60px);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -126,6 +126,8 @@ input[type="checkbox"] {
   font-size: 1.2em;
   line-height: 0.6em;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #exploding {
@@ -306,6 +308,8 @@ img {
 h3 {
   font-size: 1.5em;
   line-height: 0.7em;
+  position: relative;
+  left: -4px;
 }
 
 /* SELECTIONS */

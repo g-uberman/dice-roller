@@ -126,6 +126,10 @@ const manualInput = (sides, input) => {
 const displayHistory = () => {
   //clear old
   recordedResults.innerHTML = null;
+  //limit history to 10 past rolls
+  if (recordHistory.length > 10) {
+    recordHistory.shift();
+  }
   recordHistory.map((record) => {
     //create elements
     const newRecord = document.createElement("tr");
@@ -149,10 +153,6 @@ const displayHistory = () => {
     }
     //display all
     recordedResults.prepend(newRecord);
-    //delete old results
-    if (recordHistory.length > 10) {
-      recordHistory.shift();
-    }
   });
 };
 

@@ -209,9 +209,9 @@ const recordTotal = (total) => {
   currentRecord.total = total;
   recordCounter++;
   recordHistory.push(currentRecord);
-  // push record to localStorage
+  //push record to localStorage
   localStorage.setItem('rollHistory', JSON.stringify(recordHistory));
-  // reset currentRecord 
+  //reset currentRecord 
   currentRecord = structuredClone(recordTemplate);
 };
 

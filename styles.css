@@ -106,7 +106,6 @@ h4 {
 }
 
 input[type="checkbox"] {
-  /* filter: sepia(100%) brightness(80%) hue-rotate(170deg) saturate(70%) contrast(300%); */
   accent-color: #1d1d1a;
   cursor: pointer;
 }
@@ -191,16 +190,11 @@ input[type="checkbox"] {
 
 #individualResults .D4 {
   line-height: 1em;
-  /* padding: 0; */
-  /* padding-top: 6px; */
 }
 
 #recordedResults .D4 {
 line-height: 0em;
-  /* padding-top: 6px; */
 }
-
-
 
 /* DICE WRAPPERS */
 
@@ -314,7 +308,7 @@ h3 {
 
 /* SELECTIONS */
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
   color: none;
   background: #ffffff80;
 }

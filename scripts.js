@@ -56,8 +56,8 @@ const generateCards = (array) => {
           <div>
               <input id="D${array[i]}input" value="0" class="numInput D${array[i]} icon" onClick=(this.select()) />
               <section>
-              <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               <button id="D${array[i]}minus" class="numHandler">-</button>
+              <button id="D${array[i]}plus" class="numHandler" onclick="return null">+</button>
               </section>
           </div>
       </form>

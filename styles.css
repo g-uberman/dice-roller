@@ -120,6 +120,12 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
+.error {
+  color: #ba4437;
+  width: 300px;
+  scale: 0.5;
+}
+
 #individualResults {
   min-height: 55px;
   font-size: 1.2em;

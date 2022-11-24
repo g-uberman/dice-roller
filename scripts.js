@@ -19,6 +19,7 @@ diceTypes.map((sides) => {
 
 let recordCounter = 1;
 let currentRecord = structuredClone(recordTemplate);
+let timeoutID = 0;
 
 if (localStorage.getItem('rollHistory')) {
 recordHistory = JSON.parse(localStorage.getItem('rollHistory'));
@@ -218,15 +219,31 @@ const recordTotal = (total) => {
 // ROLL BUTTON EFFECT
 
 const rollAll = () => {
+  // CLEAR PREVIOUS VALUES
   individualResults.innerText = "";
+  rollResult.innerText = "";
   let rollsTotal = 0;
-  for (let i = 0; i < numberOfDice.length; i++) {
-    rollsTotal += rollDtype(i);
-  }
-  if (rollsTotal) {
-  rollResult.innerText = rollsTotal;
-  recordTotal(rollsTotal);
-  displayHistory();
+  rollResult.classList.remove("error");
+  clearTimeout(timeoutID);
+
+  // CHECK IF DICE WERE CHOSEN
+  let numberOfAll = numberOfDice.reduce((total, dice) => {
+    return total + dice;
+  }, 0)
+  if (numberOfAll) {
+    for (let i = 0; i < numberOfDice.length; i++) {
+      rollsTotal += rollDtype(i);
+    }
+    rollResult.innerText = rollsTotal;
+    recordTotal(rollsTotal);
+    displayHistory();
+  } else {
+    rollResult.classList.add("error");
+    rollResult.innerText = "Wybierz kości do rzutu";
+    timeoutID = setTimeout(() => {
+      rollResult.innerText = "";
+      rollResult.classList.remove("error");
+    }, 5000);
   }
 };
 

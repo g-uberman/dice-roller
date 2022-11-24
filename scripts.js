@@ -256,6 +256,8 @@ const clearAll = () => {
   }
   rollResult.innerText = "";
   individualResults.innerText = "";
+  clearTimeout(timeoutID);
+  error.classList.remove("visible");
 };
 
 // BUTTONS

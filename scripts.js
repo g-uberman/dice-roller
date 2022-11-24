@@ -39,6 +39,7 @@ const cardContainer = document.getElementById("cardContainer");
 const roll = document.getElementById("roll");
 const clear = document.getElementById("clear");
 const clearHistory = document.getElementById("clearHistory");
+const error = document.getElementById("error");
 
 // GENERATE DICE WRAPPERS
 
@@ -223,7 +224,7 @@ const rollAll = () => {
   individualResults.innerText = "";
   rollResult.innerText = "";
   let rollsTotal = 0;
-  rollResult.classList.remove("error");
+  error.classList.remove("visible");
   clearTimeout(timeoutID);
 
   // CHECK IF DICE WERE CHOSEN
@@ -238,11 +239,10 @@ const rollAll = () => {
     recordTotal(rollsTotal);
     displayHistory();
   } else {
-    rollResult.classList.add("error");
-    rollResult.innerText = "Wybierz kości do rzutu";
+    error.classList.add("visible");
     timeoutID = setTimeout(() => {
-      rollResult.innerText = "";
-      rollResult.classList.remove("error");
+      // rollResult.innerText = "";
+      error.classList.remove("visible");
     }, 5000);
   }
 };

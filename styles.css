@@ -121,6 +121,7 @@ input[type="checkbox"] {
 
 .result {
   margin-top: 10px;
+  position: relative;
 }
 
 #rollResult {
@@ -129,10 +130,21 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
-.error {
+#error {
+  position: absolute;
+  top: 45px;
+  left: -33px;
+  width: 150px;
   color: #ba4437;
-  width: 300px;
-  scale: 0.5;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 0.9em;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.visible {
+  opacity: 1 !important;
 }
 
 #individualResults {
